@@ -17,7 +17,7 @@ namespace MaxCinema.Models
 
         [Required]
         [DataType(DataType.Date)]
-        public string ReleaseYear { get; set; } = string.Empty;
+        public DateTime ReleaseYear { get; set; }
 
         [Required]
         [DataType(DataType.Currency)]
