@@ -1,4 +1,5 @@
 using MaxCinema.Data;
+using MaxCinema.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace MaxCinema
@@ -14,7 +15,11 @@ namespace MaxCinema
             var connectionString = builder.Configuration
                 .GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<MCinemaContext>(o => o.UseSqlServer(connectionString));
-            
+
+            builder.Services.AddScoped<ICustomerService, CustomerService>();
+            builder.Services.AddScoped<IMovieService, MovieService>();
+            builder.Services.AddScoped<IOrderService, OrderService>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
