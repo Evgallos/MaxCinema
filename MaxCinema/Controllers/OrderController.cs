@@ -1,12 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MaxCinema.Services;
+using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace MaxCinema.Controllers
 {
     public class OrderController : Controller
     {
-        public IActionResult Index()
+        private readonly IOrderService _orderService;
+
+        public OrderController(IOrderService orderService)
         {
-            return View();
+            _orderService = orderService;
         }
+        public IActionResult Index()
+            {
+                  return View();
+            }
+          
+        
     }
 }
