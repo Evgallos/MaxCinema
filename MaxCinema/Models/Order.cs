@@ -4,16 +4,19 @@ namespace MaxCinema.Models
 {
     public class Order
     {
+      
         [Key] 
-        public int OId { get; set; }
-        
+        public int Id { get; set; }
+
+
         [Required]
-        [StringLength(200)]
-        public string Title { get; set; } = string.Empty;
+        public DateTime OrderDate {  get; set; }
+        
+        public Customer Customer { get; set; }
 
-        public string Director { get; set; } = string.Empty;
+        public List<OrderRow> ListOrderRow { get; set; } = new List<OrderRow>();
 
-        public int OrderId { get; set; }
+
 
     }
 }
