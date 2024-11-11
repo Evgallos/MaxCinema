@@ -13,16 +13,16 @@ namespace MaxCinema.Services
         {
             _db = db;
         }
-        public void Create(Movies movie)
+        public void Create(Movie movie)
         {
             _db.Movies.Add(movie);
             _db.SaveChanges();
         }
-        public void Delete(Movies movies)
+        public void Delete(Movie movies)
         {
 
         }
-        public List<Movies> GetListAll()
+        public List<Movie> GetListAll()
         {
             var movieList = _db.Movies.OrderBy(m => m.Title).ToList();
             return movieList;

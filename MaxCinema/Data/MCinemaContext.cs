@@ -7,9 +7,9 @@ namespace MaxCinema.Data
     {
         public MCinemaContext(DbContextOptions<MCinemaContext> options) : base(options) { }
         
-        public DbSet<Movies> Movies { get; set; }
+        public DbSet<Movie> Movies { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderRow> orderRows { get; set; }
+        public DbSet<OrderRow> OrderRows { get; set; }
         public DbSet<Customer> Customers { get; set; }
         
         

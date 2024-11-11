@@ -2,7 +2,7 @@
 
 namespace MaxCinema.Models
 {
-    public class Movies
+    public class Movie
     {
         [Key]
         public int Id { get; set; }

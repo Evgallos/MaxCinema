@@ -4,9 +4,9 @@ namespace MaxCinema.Services
 {
     public interface IMovieService 
     {
-        public void Create(Movies movie);
-        public void Delete(Movies movie);
-        public List<Movies> GetListAll();
+        public void Create(Movie movie);
+        public void Delete(Movie movie);
+        public List<Movie> GetListAll();
         
 
             
