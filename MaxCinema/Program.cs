@@ -1,3 +1,6 @@
+using MaxCinema.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace MaxCinema
 {
     public class Program
@@ -8,7 +11,10 @@ namespace MaxCinema
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            var connectionString = builder.Configuration
+                .GetConnectionString("DefaultConnection");
+            builder.Services.AddDbContext<MCinemaContext>(o => o.UseSqlServer(connectionString));
+            
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
