@@ -3,7 +3,7 @@ using MaxCinema.Models;
 
 namespace MaxCinema.Services
 {
-    public class CustomerService:ICustomerService
+    public class CustomerService : ICustomerService
     {
         private readonly MCinemaContext _db;
         public CustomerService(MCinemaContext db)

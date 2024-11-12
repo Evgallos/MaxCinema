@@ -1,4 +1,5 @@
-﻿using MaxCinema.Services;
+﻿using MaxCinema.Models;
+using MaxCinema.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaxCinema.Controllers
@@ -16,14 +17,22 @@ namespace MaxCinema.Controllers
             return View();
         }
 
-        public IActionResult Create() 
+        public IActionResult CreateCustomer() 
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateCustomer(Customer customer)
+        {
+            _customerService.Create(customer);
             return View();
         }
 
         public IActionResult DisplayAll() 
         {
-            return View();
+            var customerList =_customerService.GetAll();
+            return View(customerList);
         }
     }
 }

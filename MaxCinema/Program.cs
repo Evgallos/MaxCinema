@@ -13,7 +13,7 @@ namespace MaxCinema
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             var connectionString = builder.Configuration
-                .GetConnectionString("DefaultConnection");
+                .GetConnectionString("CloudConnection");
             builder.Services.AddDbContext<MCinemaContext>(o => o.UseSqlServer(connectionString));
 
             builder.Services.AddScoped<ICustomerService, CustomerService>();
