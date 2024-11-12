@@ -12,20 +12,17 @@ namespace MaxCinema.Services
         public OrderService(MCinemaContext db)
         {
             _db = db;
-
-
-
         }
-        public void Creat(Order order)
+        public void Create(Order order)
         {
             _db.Orders.Add(order);
             _db.SaveChanges();
         }
 
 
-        public List<Order> GetAll() 
+        public List<Order> GetAll()
         {
-               var orderList = _db.Orders.OrderBy(x => x .Id).ToList();
+            var orderList = _db.Orders.OrderBy(x => x.Id).ToList();
             return orderList;
         }
 

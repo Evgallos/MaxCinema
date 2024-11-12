@@ -1,0 +1,89 @@
+﻿@model IEnumerable<MaxCinema.Models.Customer>
+
+@{
+    ViewData["Title"] = "DisplayAll";
+}
+
+<h1>DisplayAll</h1>
+
+<p>
+    <a asp-action="CreateCustomer">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Firstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lastname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BillingAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BillingZip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BillingCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryZip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillingAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillingZip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillingCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryZip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
