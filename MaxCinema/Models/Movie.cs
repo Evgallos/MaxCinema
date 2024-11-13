@@ -23,7 +23,8 @@ namespace MaxCinema.Models
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
 
-
+        [StringLength(300)]
+        public string Url { get; set; } = string.Empty;
 
     }
 }
