@@ -24,7 +24,7 @@ namespace MaxCinema.Services
         }
         public List<Movie> GetListAll()
         {
-            var movieList = _db.Movies.OrderBy(m => m.Title).ToList();
+            var movieList = _db.Movies.OrderBy(m => m.Id).ToList();
             return movieList;
         }
     }

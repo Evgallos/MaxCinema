@@ -16,8 +16,7 @@ namespace MaxCinema.Models
         public string Director { get; set; } = string.Empty;
 
         [Required]
-        [DataType(DataType.Date)]
-        public DateTime ReleaseYear { get; set; }
+        public int ReleaseYear { get; set; }
 
         [Required]
         [DataType(DataType.Currency)]
