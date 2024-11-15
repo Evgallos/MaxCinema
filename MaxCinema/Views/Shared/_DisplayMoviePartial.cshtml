@@ -3,37 +3,8 @@
 @using MaxCinema.Data;
 
 
-@*     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Director)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Director)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ReleaseYear)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ReleaseYear)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-    </dl>
-</div>
-<div> *@
 <body>
-    <h4>@Model</h4>
+
 
     <div class="row mt-5">
         <div class="col-md-6 mb-4">
@@ -41,9 +12,8 @@
                 <div class="card">
                     <img src="~/Images/harrypotter2.webp" class="card-img-top" alt="MovieId">
                     <div class="card-body">
-                        <h5 class="card-title" title="Harry Potter">@Model</h5>
-                        <p class="card-text">Harry Potter and the Globel of Fire - Harry Potter will gonna have to prove and chalenge his friendship 
-                            a new dark era comes with a lot magic and mystery...</p>
+                        <h5 class="card-title" title="Harry Potter">@Model.Title</h5>
+                        <p class="card-text"><strong>Release Year:@Model.ReleaseYear | Director:@Model.Director | Price:@Model.Price</strong></p>
                     </div>
                     <div class="card-footer">
                         <button type="button" class="btn btn-primary btn-md-3 box-shadow m-3">
@@ -55,29 +25,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6 mb-4">
-            <div class="card text-white bg-danger glass-effect red-border">
-                <div class="card">
-                    <img src="~/Images/warcraft.jpg" class="card-img-top" alt="MovieId">
-                    <div class="card-body">
-                        <h5 class="card-title" title="WarCraft">@Model</h5>
-                        <p class="card-text">
-                            The Hordes will invade once again, the magic will make the difference.. Kings and soldiers will connect as one...
-                            Orcs and trolls...
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-primary btn-md-3 box-shadow m-3">
-                            <span class="glyphicon glyphicon-shopping-cart">
-                            </span>
-                            <b> Add to Cart </b>
-                        </button>
-                        <small class="text-muted"> &copy; Max Cinema</small>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div>    
     </div>
 
    
