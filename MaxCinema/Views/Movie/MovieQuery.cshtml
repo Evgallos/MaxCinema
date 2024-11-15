@@ -1,0 +1,136 @@
+﻿
+
+@model MaxCinema.Models.ViewModel.QueryMovieListsVM
+
+   
+{
+    <div>Most Popular</div>
+    <table class="table">
+        <tbody>
+            @foreach (var item in Model.MostPop)
+            {
+                <tr>
+                    <td>
+                        @item.Title
+                    </td>
+                    <td>
+                        @item.Director
+                    </td>
+                    <td>
+                        @item.ReleaseYear
+                    </td>
+                    <td>
+                        @item.Price
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+
+{
+<div>Newest</div>
+<table class="table">
+    <tbody>
+        @foreach (var item in Model.Newest)
+        {
+            <tr>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Director
+                </td>
+                <td>
+                    @item.ReleaseYear
+                </td>
+                <td>
+                    @item.Price
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+}
+
+{
+<div>Oldest</div>
+<table class="table">
+    <tbody>
+        @foreach (var item in Model.Oldest)
+        {
+            <tr>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Director
+                </td>
+                <td>
+                    @item.ReleaseYear
+                </td>
+                <td>
+                    @item.Price
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+}
+
+{
+<div>Cheapest</div>
+<table class="table">
+    <tbody>
+        @foreach (var item in Model.Cheapest)
+        {
+            <tr>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Director
+                </td>
+                <td>
+                    @item.ReleaseYear
+                </td>
+                <td>
+                    @item.Price
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+}
+
+{
+<div>Most Expensive Order</div>
+<table class="table">
+    <tbody>
+      @*   @foreach (var item in Model.ExpenOrder)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.OrderId
+                </td>
+                <td>
+                    @item.MovieId
+                </td>
+                <td>
+                    @item.Price
+                </td>
+            </tr>
+        } *@
+    </tbody>
+</table>
+
+}
+
+
