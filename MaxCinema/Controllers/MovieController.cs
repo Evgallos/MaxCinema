@@ -17,11 +17,19 @@ namespace MaxCinema.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var movies =_movieService.GetListAll();
+            return View(movies);
         }
         public IActionResult CreateMovie()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult CreateMovie(Movie movie)
+        {
+            if (ModelState.IsValid)
+            _movieService.Create(movie);
+            return RedirectToAction("Index");
         }
         public IActionResult DeleteMovie()
         {

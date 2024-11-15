@@ -12,15 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MaxCinema.Migrations
 {
     [DbContext(typeof(MCinemaContext))]
-    [Migration("20241111101246_init")]
-    partial class Init
+    [Migration("20241113095124_changedatadate")]
+    partial class changedatadate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.10")
+                .HasAnnotation("ProductVersion", "9.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -88,7 +88,7 @@ namespace MaxCinema.Migrations
                     b.ToTable("Customers");
                 });
 
-            modelBuilder.Entity("MaxCinema.Models.Movies", b =>
+            modelBuilder.Entity("MaxCinema.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -104,8 +104,10 @@ namespace MaxCinema.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("ReleaseYear")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("ReleaseYear")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -159,7 +161,7 @@ namespace MaxCinema.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("orderRows");
+                    b.ToTable("OrderRows");
                 });
 
             modelBuilder.Entity("MaxCinema.Models.Order", b =>
