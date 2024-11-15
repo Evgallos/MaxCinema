@@ -18,5 +18,85 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: rgb(236, 142, 142);
+    padding-top: 20px;
 }
+.container{
+    text-align:center;
+}
+/*--Evangelos, I created this CSS for customer and Admin button to fix their positions isnt working
+    well need to work on that after when we make the next views see bello the .btnAccess, .position-absolute CSS class (keep it as comment for now)*/
+
+/*.btnAccess, .position-absolute{
+    Top:0;
+    right:0;
+    left:0px;
+    padding:1rem;
+}*/
+
+/*--Evangelos: Bellow is the Css(A lot problems i found on the way mixing bootstrap and CSS especialy with carousel now works but still needs adjustments
+    for Cards in Home index:  */
+
+.carousel-item img {
+    object-fit: cover;
+    height: 400px;
+    border-radius: 8px;
+}
+
+
+
+
+.card img {
+    border-radius: 10px 10px 0 0; /*--Evangelos About cards we can use Card Head and remove the picture*/
+    height: 200px;               /*to add some text or some list but can become problematic with the CSS..*/
+    object-fit: cover;
+}
+
+.card-body {
+    background-color: #ffffff;
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #007bff;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #333;
+}
+
+.card-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e1e1e1;
+}
+
+/*-- Evangelos(some problems was pop up on testing so i use glass effects and hover the hover code i find it as idea from online source about us CSS see bellow:*/
+/* General styles for glass effect and shadow */
+
+/*Update i deleted Hover effect for minimize the risk of critical errors and delays on website*/
+.glass-effect {
+    background: rgba(0, 0, 0, 0.1);
+    color: black;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px #f8f9fa, 0 1px 3px #333;
+    backdrop-filter: blur(10px);
+}
+.red-border {
+    border: 2px solid white;
+}
+
+.bordeaux-border {
+    border: 2px solid #6A0DAD;
+}
+
+.dark-border {
+    border: 2px solid #333333; 
+}
+
+
+
