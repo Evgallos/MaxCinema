@@ -98,5 +98,22 @@ body {
     border: 2px solid #333333; 
 }
 
+.cart-container {
+    position: relative;
+    display: inline-block
+}
+
+.item-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: blue;
+    color: white;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
 
 

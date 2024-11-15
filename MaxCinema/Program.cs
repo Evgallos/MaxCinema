@@ -20,6 +20,9 @@ namespace MaxCinema
             builder.Services.AddScoped<IMovieService, MovieService>();
             builder.Services.AddScoped<IOrderService, OrderService>();
 
+            builder.Services.AddSession(o => o.IdleTimeout = TimeSpan.FromMinutes(20));
+            builder.Services.AddHttpContextAccessor();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -33,6 +36,7 @@ namespace MaxCinema
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();

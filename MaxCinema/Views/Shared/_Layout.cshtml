@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@using MaxCinema.Helper;
+@{
+    var count = @HttpContextAccessor.HttpContext.Session.Get<int>("itemCount");
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -33,6 +39,14 @@
                         </li>
                     </ul>
                 </div>
+
+                <div class="d-flex cart-container">
+                    <a asp-controller="Cart" asp-action="CartDisplay" class="nav-link">
+                        <i class="cart-icon" style="font-size:1.5rem;">&#128722;</i>
+                    </a>
+                    <span class="item-count" id="cartCount">@count</span>
+                </div>
+
             </div>
         </nav>
     </header>

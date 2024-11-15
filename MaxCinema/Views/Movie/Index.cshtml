@@ -9,9 +9,12 @@
 <p>
     <a asp-action="CreateMovie">Create New</a>
 </p>
-
-@foreach(var item in Model)
-{
-    <partial name="_DisplayMoviePartial" model="@item" />
-}
+<div class="row mt-5">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-6 mb-4">
+            <partial name="_DisplayMoviePartial" model="@item" />
+        </div>   
+    }
+</div>
 
