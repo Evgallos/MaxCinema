@@ -97,6 +97,23 @@ body {
 .dark-border {
     border: 2px solid #333333; 
 }
+.Display-Movie-Text{
+    color:red;
+}
+
+/*DropDown buttons Home page Stylisg list : */
+.dropdown-menu {
+    background-color: #f8d7da; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+
+.dropdown-item {
+    color: #721c24;
+    background-color: transparent; 
+}
+
 
 
 
