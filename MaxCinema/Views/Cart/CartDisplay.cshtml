@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MaxCinema.Models.VM.MovieInCartViewModel>
+
+@{
+    decimal sum = 0;
+    int count = 0;
+}
+<h1>Cart Display</h1>
+
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-md-10">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Movie
+                        </th>
+                        <th>
+                            Unit Price
+                        </th>
+                        <th>
+                            Quantity
+                        </th>
+                        <th>
+                            Sum
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr id="@($"{item.Movie.Id}Row")">
+                            <td>
+                                @item.Movie.Title
+                            </td>
+                            <td>
+                                <div id=@($"{item.Movie.Id}Price")>@item.Movie.Price</div>
+                            </td>
+                            <td>
+                                <span id=@($"{item.Movie.Id}Quantity")>@item.Quantity</span>
+                                <button onclick="Plus1(@item.Movie.Id)" class="btn btn-primary" id="plus1">+1</button>
+                                <button onclick="Minus1(@item.Movie.Id)" class="btn btn-primary" id="minus1">-1</button>
+                            </td>
+                            <td>
+                                @{
+                                    decimal qup = @item.Movie.Price * @item.Quantity;
+                                    sum += qup;
+                                    count += @item.Quantity;
+                                }
+                                <div id=@($"{item.Movie.Id}Qup")>@qup</div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<strong>Total Pieces</strong>
+<div id="totalAmount">@count</div>
+<strong>Total Sum</strong>
+<div id="totalCost">@sum</div>
+<a asp-action="CheckOut" class="btn btn-primary">Check Out</a>

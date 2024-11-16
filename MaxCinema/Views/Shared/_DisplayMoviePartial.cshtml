@@ -3,6 +3,7 @@
 @using MaxCinema.Data;
 
 
+
 <body>
     <div class="container">
         <div class="row mt-5">
@@ -74,4 +75,25 @@
     </div>
 
 </body>
+
+=======
+<div class="card text-white bg-danger glass-effect red-border">
+    <div class="card">
+        <img src="@Model.Url" class="card-img-top" alt="MovieId">
+        <div class="card-body">
+            <h5 class="card-title" title="Harry Potter">@Model.Title</h5>
+            <p class="card-text"><strong>Release Year:@Model.ReleaseYear | Director:@Model.Director | Price:@Model.Price</strong></p>
+        </div>
+        <div class="card-footer">
+            <button onclick="AddToCart(@Model.Id)" type="button" class="btn btn-primary btn-md-3 box-shadow m-3">
+                <span class="glyphicon glyphicon-shopping-cart">
+                </span>
+                <b> Add to Cart </b>
+            </button>
+            <small class="text-muted"> &copy; Max Cinema</small>
+        </div>
+    </div>
+</div>
+    
+
 
