@@ -7,9 +7,5 @@ namespace MaxCinema.Services
         public void Create(Movie movie);
         public void Delete(Movie movie);
         public List<Movie> GetListAll();
-
-        public Movie Get(int id);
-
-
     }
 }
