@@ -64,5 +64,13 @@ namespace MaxCinema.Controllers
             return View();
         }
 
+        public IActionResult CustomerOrderDisplay() 
+        {
+            string email = (string)TempData["CustomerEmail"];
+            Customer customer = _customerService.GetCustomerByEmail(email);
+            var orders =  customer.Orders;
+            return View(orders);
+        }
+
     }
 }

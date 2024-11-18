@@ -1,0 +1,12 @@
+﻿@model IEnumerable<MaxCinema.Models.Order>
+
+@foreach(var item in Model)
+{
+    <div>@item.Id</div>
+    <div>@item.OrderDate</div>
+
+    foreach(var orderRow in @item.ListOrderRow)
+    {
+        <div>@orderRow.MovieId</div>
+    }
+}

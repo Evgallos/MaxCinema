@@ -1,4 +1,5 @@
-﻿using MaxCinema.Models;
+﻿using MaxCinema.Helper;
+using MaxCinema.Models;
 using MaxCinema.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -44,5 +45,28 @@ namespace MaxCinema.Controllers
             var customerList =_customerService.GetAll();
             return View(customerList);
         }
+
+        public IActionResult CustomerCheckIn()
+        {
+            return View();
+        }
+        [HttpPost]
+            public IActionResult CustomerCheckIn(string inputEmail) 
+        {
+            var customer = _customerService.GetCustomerByEmail(inputEmail);
+            if (customer == null)
+            {
+                TempData["EmailCheck"] = "This email is not registered. Become our member now!";
+                return RedirectToAction("CreateCustomer", "Customer");
+            }
+            else
+            {
+                TempData["CustomerEmail"] = inputEmail;
+                return RedirectToAction("CustomerOrderDisplay", "Order");
+            }
+        }
+
+
+  
     }
 }
