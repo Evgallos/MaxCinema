@@ -10,6 +10,8 @@ namespace MaxCinema.Services
 
         public Movie Get(int id);
 
+        public decimal GetPrice(int id);
+
 
     }
 }

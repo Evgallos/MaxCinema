@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MaxCinema.Helper;
 using MaxCinema.Models.VM;
+using MaxCinema.Models;
 
 namespace MaxCinema.Controllers
 {
@@ -87,10 +88,26 @@ namespace MaxCinema.Controllers
             return Json(new { count = numberOfListItems, countId = numberOfId, msg = "item -1 to cart" });
         }
 
-        public IActionResult CheckOut()
+        public IActionResult CheckOutEmail()
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult CheckOutEmail(string inputEmail)
+        {
+            var customer = _customerService.GetCustomerByEmail(inputEmail);
+            if ( customer == null ) 
+            {
+                TempData["EmailCheck"] = "This email is not registered. Become our member now!";
+                return RedirectToAction("CreateCustomer", "Customer");
+            }
+            else 
+            {
+                HttpContext.Session.Set<string>("CustomerEmail", inputEmail);
+                return RedirectToAction("OrderToConfirm","Order");
+            }
+        }
+
 
     }
 }

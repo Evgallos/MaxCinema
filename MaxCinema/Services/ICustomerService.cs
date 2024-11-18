@@ -6,5 +6,7 @@ namespace MaxCinema.Services
     {
         public void Create(Customer customer);
         public List<Customer> GetAll();
+
+        public Customer GetCustomerByEmail(string email);
     }
 }

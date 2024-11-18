@@ -25,6 +25,7 @@ namespace MaxCinema.Controllers
         [HttpPost]
         public IActionResult CreateCustomer(Customer customer)
         {
+            
             _customerService.Create(customer);
             return View();
         }

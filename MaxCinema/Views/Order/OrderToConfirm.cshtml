@@ -1,0 +1,80 @@
+﻿@model MaxCinema.Models.Customer
+
+<h1>Customer information</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Firstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lastname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BillingAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BillingZip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BillingCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryZip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+            <tr>
+                <td>
+                    @Model.Firstname
+                </td>
+                <td>
+                    @Model.Lastname
+                </td>
+                <td>
+                    @Model.BillingAddress
+                </td>
+                <td>
+                    @Model.BillingZip
+                </td>
+                <td>
+                    @Model.BillingCity
+                </td>
+                <td>
+                    @Model.DeliveryAddress
+                </td>
+                <td>
+                    @Model.DeliveryZip
+                </td>
+                <td>
+                    @Model.DeliveryCity
+                </td>
+                <td>
+                    @Model.EmailAddress
+                </td>
+                <td>
+                    @Model.Phone
+                </td>
+            </tr>
+        
+    </tbody>
+</table>
+<a asp-action="CartDisplay" asp-controller="Cart" class="btn btn-primary">Back to the cart</a>
+<br />
+<br />
+<a asp-action="OrderConfirmed" class="btn btn-primary">Confirm the order</a>

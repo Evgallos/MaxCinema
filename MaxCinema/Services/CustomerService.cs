@@ -23,5 +23,11 @@ namespace MaxCinema.Services
             var customerList = _db.Customers.OrderBy(x => x.Lastname).ToList();
             return customerList;
         }
+
+        public Customer GetCustomerByEmail(string email)
+        {
+            Customer customer = _db.Customers.Where(x => x.EmailAddress == email).FirstOrDefault();
+            return customer;
+        }
     }
 }
