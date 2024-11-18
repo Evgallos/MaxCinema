@@ -10,7 +10,7 @@
 <h3>@TempData["EmailCheck"]</h3>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 glass-effect red-border">
         <form asp-action="CreateCustomer">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -64,7 +64,7 @@
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary btn-md-3 box-shadow m-3" />
             </div>
 
         </form>
@@ -72,7 +72,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index"></a>
 </div>
 
 @section Scripts {
