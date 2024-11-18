@@ -5,40 +5,21 @@
 
 
 
-<body>
-
+<div class="card text-white bg-danger glass-effect red-border">
     <div class="card">
         <img src="@Model.Url" class="card-img-top" alt="MovieId">
         <div class="card-body">
-            <h5 class="card-title" title="">@Model.Title</h5>
-            <p>Year:<strong class="Display-Movie-Text">@Model.ReleaseYear</strong> | Dir: <strong class="Display-Movie-Text">@Model.Director </strong>| Sek: <strong class="Display-Movie-Text">@Model.Price</strong></p>
+            <h5 class="card-title" title="Harry Potter">@Model.Title</h5>
+            <p class="card-text"><strong>Release Year:@Model.ReleaseYear | Director:@Model.Director | Price:@Model.Price</strong></p>
         </div>
         <div class="card-footer">
-            <button type="button" class="btn btn-danger btn-md-3 box-shadow m-3">
-                <span class="glyphicon glyphicon-shopping-cart"></span>
-                <b>Add to Cart</b>
+            <button onclick="AddToCart(@Model.Id)" type="button" class="btn btn-primary btn-md-3 box-shadow m-3">
+                <span class="glyphicon glyphicon-shopping-cart">
+                </span>
+                <b> Add to Cart </b>
             </button>
             <small class="text-muted"> &copy; Max Cinema</small>
         </div>
     </div>
-            
-                
-
-    
-    @* <div class="row mt-4">
-        <div class="col-12 text-center">
-            
-            <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning btn-sm">
-                <i class="glyphicon glyphicon-pencil"></i> Edit
-            </a>
-            
-            <a asp-action="Index" class="btn btn-secondary btn-sm">
-                <i class="glyphicon glyphicon-arrow-left"></i> Back to List
-            </a>
-        </div>
-    </div> *@
-
-</body>
-    
-
+</div>
 
