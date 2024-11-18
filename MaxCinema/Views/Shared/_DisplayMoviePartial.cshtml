@@ -6,45 +6,24 @@
 
 
 <body>
-    <div class="container">
-        <div class="row mt-5">
 
-            <div class="col-md-12 mb-4">
-                <div class="card">
-                    <img src="~/Images/harrypotter2.webp" class="card-img-top" alt="MovieId">
-                    <div class="card-body">
-                        <h5 class="card-title" title="">@Model.Title</h5>
-                        <p>Year:<strong class="Display-Movie-Text">@Model.ReleaseYear</strong> | Dir: <strong class="Display-Movie-Text">@Model.Director </strong>| Sek: <strong class="Display-Movie-Text">@Model.Price</strong></p>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-danger btn-md-3 box-shadow m-3">
-                            <span class="glyphicon glyphicon-shopping-cart"></span>
-                            <b>Add to Cart</b>
-                        </button>
-                        <small class="text-muted"> &copy; Max Cinema</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-12 mb-4">
-                <div class="card">
-                    <img src="~/Images/harrypotter2.webp" class="card-img-top" alt="MovieId">
-                    <div class="card-body">
-                        <h5 class="card-title" title="">@Model.Title</h5>
-                        <p>Year:<strong class="Display-Movie-Text">@Model.ReleaseYear</strong> | Dir: <strong class="Display-Movie-Text">@Model.Director </strong>| Sek: <strong class="Display-Movie-Text">@Model.Price</strong></p>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-danger btn-md-3 box-shadow m-3">
-                            <span class="glyphicon glyphicon-shopping-cart"></span>
-                            <b>Add to Cart</b>
-                        </button>
-                        <small class="text-muted"> &copy; Max Cinema</small>
-                    </div>
-                </div>
-            </div>
-            
+    <div class="card">
+        <img src="@Model.Url" class="card-img-top" alt="MovieId">
+        <div class="card-body">
+            <h5 class="card-title" title="">@Model.Title</h5>
+            <p>Year:<strong class="Display-Movie-Text">@Model.ReleaseYear</strong> | Dir: <strong class="Display-Movie-Text">@Model.Director </strong>| Sek: <strong class="Display-Movie-Text">@Model.Price</strong></p>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-danger btn-md-3 box-shadow m-3">
+                <span class="glyphicon glyphicon-shopping-cart"></span>
+                <b>Add to Cart</b>
+            </button>
+            <small class="text-muted"> &copy; Max Cinema</small>
         </div>
     </div>
+            
+                
+
     
     @* <div class="row mt-4">
         <div class="col-12 text-center">
