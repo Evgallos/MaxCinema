@@ -90,6 +90,11 @@ namespace MaxCinema.Controllers
 
         public IActionResult CheckOutEmail()
         {
+            var cartList = HttpContext.Session.Get<List<int>>("ShoppingCart");
+            if (HttpContext.Session.Get<List<int>>("ShoppingCart") == null || cartList.Count() == 0)
+            {
+                return RedirectToAction("EmptyCart");
+            }
             return View();
         }
         [HttpPost]
