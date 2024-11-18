@@ -30,8 +30,14 @@ namespace MaxCinema.Services
 
         public Movie Get(int id)
         {
-            var movie = _db.Movies.SingleOrDefault(x => x.Id == id);
+            var movie = _db.Movies.FirstOrDefault(x => x.Id == id);
             return movie!;
+        }
+
+        public decimal GetPrice(int id)
+        {
+            decimal price = _db.Movies.Where(m => m.Id == id).FirstOrDefault().Price;
+            return price;
         }
     }
 }
