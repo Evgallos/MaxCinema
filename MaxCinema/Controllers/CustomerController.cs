@@ -25,8 +25,18 @@ namespace MaxCinema.Controllers
         [HttpPost]
         public IActionResult CreateCustomer(Customer customer)
         {
-            _customerService.Create(customer);
-            return View();
+            if(_customerService.GetCustomerByEmail(customer.EmailAddress)==null)
+            {
+                _customerService.Create(customer);
+                TempData["EmailCheck"] = "Congs! You are successfully registered!";
+                return View();
+            }
+           
+            else
+            {
+                TempData["EmailCheck"]= "This email address is already registered!";
+                return View();
+            }           
         }
 
         public IActionResult DisplayAll() 
