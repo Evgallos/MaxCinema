@@ -8,6 +8,8 @@ namespace MaxCinema.Services
 
         public List<Order> GetAll();
 
+        public Order GetBigestOrder();
+
 
     }
 }
