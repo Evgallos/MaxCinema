@@ -1,4 +1,10 @@
-﻿@{
+﻿
+@model MaxCinema.Models.Movie
+@using System.ComponentModel.DataAnnotations;
+@using MaxCinema.Data;
+
+@{
+
     ViewData["Title"] = "Welcome to Max Cinema";
 }
 <h1>@ViewData["Title"]</h1><br />
@@ -15,24 +21,24 @@
         <div id="movieCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="~/Images/hp600.jpeg" class="d-block w-100"
-                         alt="Harry Potter">
+                    <img src="@Model.Url" class="d-block w-100"
+                         alt="@Model.Id">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Harry Potter and the Goblet of Fire</h5>
+                        <h5>@Model.Title</h5>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="~/Images/transformers2.jpg" class="d-block w-100"
-                         alt="Transformers">
+                    <img src="@Model.Url" class="d-block w-100"
+                         alt="@Model.Id">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Transformers</h5>
+                        <h5>@Model.Title</h5>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="~/Images/catchme860.jpg" class="d-block w-100"
-                         alt="Catch Me If You Can">
+                    <img src="@Model.Url" class="d-block w-100"
+                         alt="@Model.Id">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Catch Me If You Can</h5>
+                        <h5>@Model.Title</h5>
                     </div>
                 </div>
             </div>
