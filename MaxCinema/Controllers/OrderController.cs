@@ -54,6 +54,8 @@ namespace MaxCinema.Controllers
             }
             _orderService.Create(newOrder);
 
+            customer.Orders.Add(newOrder);
+
             HttpContext.Session.Clear();
 
             return RedirectToAction("OrderCompleted");

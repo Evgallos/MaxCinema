@@ -1,8 +1,6 @@
 using MaxCinema.Models;
-
 using MaxCinema.Models.VM;
 using MaxCinema.Services;
-
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -29,7 +27,6 @@ namespace MaxCinema.Controllers
 
         public IActionResult Index()
         {
-
             var queryLists = new QueryMovieListsVM();
 
             queryLists.Mostpop = _movieService.GetTopFivePopularMovies();
@@ -57,5 +54,3 @@ namespace MaxCinema.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-    }
-}
