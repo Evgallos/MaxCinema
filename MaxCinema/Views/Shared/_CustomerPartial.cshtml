@@ -1,16 +1,19 @@
 ﻿@model MaxCinema.Models.Customer
 
-<div class="col-md-6">
-    <div class="list-group-item list-group-item-action mb-3 p-3 shadow-sm border rounded ">
-        <h5 class="mb-3"><strong>@Model.Firstname @Model.Lastname</strong></h5>
-        <p><strong>Billing Address:</strong> @Model.BillingAddress, @Model.BillingCity, @Model.BillingZip</p>
-        <p><strong>Delivery Address:</strong> @Model.DeliveryAddress, @Model.DeliveryCity, @Model.DeliveryZip</p>
-        <p><strong>Email:</strong> @Model.EmailAddress</p>
-        <p><strong>Phone:</strong> @Model.Phone</p>
-        <div class="btn-group" role="group">
-            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning btn-sm">Edit</a>
-            <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-info btn-sm">Details</a>
-            <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger btn-sm">Delete</a>
+
+    <div class="col-md-4 mb-4">
+        <div class="list-group-item list-group-item-action mb-3 p-3 shadow-sm border rounded ">
+            <h5 class="mb-3"><strong>@Model.Firstname @Model.Lastname</strong></h5>
+            <p><strong>Billing Address:</strong> @Model.BillingAddress, @Model.BillingCity, @Model.BillingZip</p>
+            <p><strong>Delivery Address:</strong> @Model.DeliveryAddress, @Model.DeliveryCity, @Model.DeliveryZip</p>
+            <p><strong>Email:</strong> @Model.EmailAddress</p>
+            <p><strong>Phone:</strong> @Model.Phone</p>
+            <div class="btn-group" role="group">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning btn-sm">Edit</a>
+                <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-info btn-sm">Details</a>
+                <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger btn-sm">Delete</a>
+            </div>
         </div>
     </div>
-</div>
+
+
