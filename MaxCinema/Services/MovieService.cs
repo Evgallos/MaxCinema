@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 
 namespace MaxCinema.Services
 {
-    public class MovieService: IMovieService
+    public class MovieService : IMovieService
     {
         private readonly MCinemaContext _db;
         public MovieService(MCinemaContext db)
@@ -38,6 +38,40 @@ namespace MaxCinema.Services
         {
             decimal price = _db.Movies.Where(m => m.Id == id).FirstOrDefault().Price;
             return price;
+        }
+
+        public List<Movie> GetTopFivePopularMovies()
+        {
+            return _db.Movies
+                    .Include(m => m.OrdeRows)
+                    .OrderByDescending(o => o.OrdeRows.Count())
+                    .Take(5)
+                    .ToList();
+        }
+
+        public List<Movie> GetTopFiveNewMovies()
+        {
+            return _db.Movies
+                .OrderByDescending(m => m.ReleaseYear)
+                .Take(5)
+                .ToList();
+
+        }
+
+        public List<Movie> GetTopFiveOldestMovies()
+        {
+            return _db.Movies
+               .OrderBy(m => m.ReleaseYear)
+               .Take(5)
+               .ToList();
+        }
+
+        public List<Movie> GetTopFiveCheapestMovies()
+        {
+            return _db.Movies
+              .OrderBy(m => m.Price)
+              .Take(5)
+              .ToList();
         }
     }
 }

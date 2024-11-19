@@ -14,6 +14,7 @@ namespace MaxCinema
             builder.Services.AddControllersWithViews();
             var connectionString = builder.Configuration
                 .GetConnectionString("CloudConnection");
+                //.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<MCinemaContext>(o => o.UseSqlServer(connectionString));
 
             builder.Services.AddScoped<ICustomerService, CustomerService>();

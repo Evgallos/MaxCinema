@@ -1,5 +1,7 @@
 ﻿using MaxCinema.Data;
 using MaxCinema.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace MaxCinema.Services
 {
@@ -26,5 +28,12 @@ namespace MaxCinema.Services
             return orderList;
         }
 
+        public Order GetBigestOrder()
+        {
+            return _db.Orders
+                .OrderByDescending(o => o.ListOrderRow.Sum(or => or.Price))
+                .Include(o => o.Customer)
+                .FirstOrDefault();
+        }
     }
 }

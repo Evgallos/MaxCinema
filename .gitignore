@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/MaxCinema/Controllers/HomeController.cs
+/MaxCinema/Services/IOrderService.cs
+/MaxCinema/Services/OrderService.cs
+/MaxCinema/Views/Movie/MovieQuery.cshtml

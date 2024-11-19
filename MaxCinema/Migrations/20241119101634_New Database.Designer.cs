@@ -4,6 +4,7 @@ using MaxCinema.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MaxCinema.Migrations
 {
     [DbContext(typeof(MCinemaContext))]
-    partial class MCinemaContextModelSnapshot : ModelSnapshot
+    [Migration("20241119101634_New Database")]
+    partial class NewDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -185,15 +188,13 @@ namespace MaxCinema.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MaxCinema.Models.Order", "Order")
+                    b.HasOne("MaxCinema.Models.Order", null)
                         .WithMany("ListOrderRow")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Movie");
-
-                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("MaxCinema.Models.Customer", b =>

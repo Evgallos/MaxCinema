@@ -8,5 +8,7 @@ namespace MaxCinema.Services
         public List<Customer> GetAll();
 
         public Customer GetCustomerByEmail(string email);
+
+        public Customer GetCustomerWithBiggestOrder();
     }
 }

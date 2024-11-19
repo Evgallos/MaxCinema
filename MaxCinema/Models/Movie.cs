@@ -25,5 +25,12 @@ namespace MaxCinema.Models
         [StringLength(300)]
         public string Url { get; set; } = string.Empty;
 
+        public string TitleAndYear {
+            get {  
+                return $"{Title} ({ReleaseYear})"; }
+                }
+
+        public virtual ICollection<OrderRow> OrdeRows { get; set; }
+
     }
 }

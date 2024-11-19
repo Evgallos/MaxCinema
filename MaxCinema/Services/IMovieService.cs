@@ -9,5 +9,12 @@ namespace MaxCinema.Services
         public List<Movie> GetListAll();
         public Movie Get(int id);
         public decimal GetPrice(int id);
+
+        public List<Movie> GetTopFivePopularMovies();
+        public List<Movie> GetTopFiveNewMovies();
+
+        public List<Movie> GetTopFiveOldestMovies();
+
+        public List<Movie> GetTopFiveCheapestMovies();
     }
 }

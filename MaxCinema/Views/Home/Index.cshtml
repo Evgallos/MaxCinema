@@ -1,15 +1,9 @@
-﻿
-@model MaxCinema.Models.Movie
-@using System.ComponentModel.DataAnnotations;
-@using MaxCinema.Data;
+@model MaxCinema.Models.VM.QueryMovieListsVM
 
-@{
+<h1>Welcome to Max Cinema</h1>
+<br />
 
-    ViewData["Title"] = "Welcome to Max Cinema";
-}
-<h1>@ViewData["Title"]</h1><br />
 
-<body>
     <div class="btnAccess">
         <div class="position-absolute top-0 end-0 p-3 m-5">
             <a asp-controller="Customer" asp-action="CustomerCheckIn" class="btn btn-danger mb-3 box-shadow m-3" tabindex="-1" role="button" aria-disabled="true">Customer</a>
@@ -67,11 +61,12 @@
                                 Show Movies
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">Movie 1</a></li>
-                                <li><a class="dropdown-item" href="#">Movie 2</a></li>
-                                <li><a class="dropdown-item" href="#">Movie 3</a></li>
-                                <li><a class="dropdown-item" href="#">Movie 4</a></li>
-                                <li><a class="dropdown-item" href="#">Movie 5</a></li>
+                                @* ToDo: Make it so it goes to the detailed view of that movie *@
+                                <li><a class="dropdown-item" href="Movie">@Model.Mostpop[0].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="Movie">@Model.Mostpop[1].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="Movie">@Model.Mostpop[2].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="Movie">@Model.Mostpop[3].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="Movie">@Model.Mostpop[4].TitleAndYear</a></li>
                             </ul>
                         </div>
                         <small class="text-muted">Top 5 movies</small>
@@ -92,11 +87,11 @@
                                 Show Movies
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">Movie 1</a></li>
-                                <li><a class="dropdown-item" href="#">Movie 2</a></li>
-                                <li><a class="dropdown-item" href="#">Movie 3</a></li>
-                                <li><a class="dropdown-item" href="#">Movie 4</a></li>
-                                <li><a class="dropdown-item" href="#">Movie 5</a></li>
+                                <li><a class="dropdown-item" href="#">@Model.Newest[0].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="#">@Model.Newest[1].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="#">@Model.Newest[2].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="#">@Model.Newest[3].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="#">@Model.Newest[4].TitleAndYear</a></li>
                             </ul>
                         </div>
                         <small class="text-muted">Top 5 newest movies</small>
@@ -117,11 +112,11 @@
                                 Show Movies
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">Movie 1</a></li>
-                                <li><a class="dropdown-item" href="#">Movie 2</a></li>
-                                <li><a class="dropdown-item" href="#">Movie 3</a></li>
-                                <li><a class="dropdown-item" href="#">Movie 4</a></li>
-                                <li><a class="dropdown-item" href="#">Movie 5</a></li>
+                                <li><a class="dropdown-item" href="#">@Model.Oldest[0].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="#">@Model.Oldest[1].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="#">@Model.Oldest[2].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="#">@Model.Oldest[3].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="#">@Model.Oldest[4].TitleAndYear</a></li>
                             </ul>
                         </div>
                         <small class="text-muted">Top 5 oldest movies</small>
@@ -142,11 +137,11 @@
                                 Show Movies
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">Movie 1</a></li>
-                                <li><a class="dropdown-item" href="#">Movie 2</a></li>
-                                <li><a class="dropdown-item" href="#">Movie 3</a></li>
-                                <li><a class="dropdown-item" href="#">Movie 4</a></li>
-                                <li><a class="dropdown-item" href="#">Movie 5</a></li>
+                                <li><a class="dropdown-item" href="#">@Model.Cheapest[0].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="#">@Model.Cheapest[1].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="#">@Model.Cheapest[2].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="#">@Model.Cheapest[3].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="#">@Model.Cheapest[4].TitleAndYear</a></li>
                             </ul>
                         </div>
                         <small class="text-muted">Top 5 cheapest movies</small>
@@ -168,7 +163,7 @@
                                 Top Customer
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">Top Customer 1</a></li>
+                                <li><a class="dropdown-item" href="#">@Model.BigestOrder.FullName</a></li>
                             </ul>
                         </div>
                         <small class="text-muted">Top customer</small>
@@ -204,6 +199,6 @@
         </div>
 
     </div>
-</body>
+
 
 
