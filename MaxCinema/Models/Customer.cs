@@ -12,6 +12,7 @@ namespace MaxCinema.Models
         [Required]
         [StringLength(50)]
         public string Lastname { get; set; } = string.Empty;
+        public string FullName { get { return $"{Firstname} {Lastname}"; } }
         [Required]
         [StringLength(200)]
         public string BillingAddress { get; set; } = string.Empty;

@@ -16,7 +16,7 @@ namespace MaxCinema.Models
 
         public List<OrderRow> ListOrderRow { get; set; } = new List<OrderRow>();
 
-
+        //public virtual ICollection<OrderRow> ListOrderRows { get; set; }
 
     }
 }

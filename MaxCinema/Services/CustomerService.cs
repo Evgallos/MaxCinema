@@ -29,5 +29,14 @@ namespace MaxCinema.Services
             Customer customer = _db.Customers.Where(x => x.EmailAddress == email).FirstOrDefault();
             return customer;
         }
+
+        public Customer GetCustomerWithBiggestOrder()
+        {
+            OrderService orderService = new OrderService(_db);
+
+            Order bigOrder = orderService.GetBigestOrder();
+
+            return bigOrder.Customer;
+        }
     }
 }
