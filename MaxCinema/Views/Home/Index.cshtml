@@ -1,9 +1,10 @@
 @model MaxCinema.Models.VM.QueryMovieListsVM
 
+
 <h1>Welcome to Max Cinema</h1>
 <br />
 
-
+<body>
     <div class="btnAccess">
         <div class="position-absolute top-0 end-0 p-3 m-5">
             <a asp-controller="Customer" asp-action="CustomerCheckIn" class="btn btn-danger mb-3 box-shadow m-3" tabindex="-1" role="button" aria-disabled="true">Customer</a>
@@ -12,27 +13,29 @@
     </div>
 
     <div class="container">
+  
+    
         <div id="movieCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="@Model.Url" class="d-block w-100"
-                         alt="@Model.Id">
+                    <img src="~/Images/hp600.jpeg" class="d-block w-100"
+                         alt="HarryPotter">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>@Model.Title</h5>
+                        <h5>Harry Potter and the Globel of Fire</h5>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="@Model.Url" class="d-block w-100"
-                         alt="@Model.Id">
+                    <img src="~/Images/transformers2.jpg" class="d-block w-100"
+                         alt="Optimus-Prime">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>@Model.Title</h5>
+                        <h5>Transformers</h5>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="@Model.Url" class="d-block w-100"
-                         alt="@Model.Id">
+                    <img src="~/Images/catchme860.jpg" class="d-block w-100"
+                         alt="CatchMe">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>@Model.Title</h5>
+                        <h5>Catch me if You can</h5>
                     </div>
                 </div>
             </div>
@@ -44,9 +47,9 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
-        </div>
-
         
+    </div>
+    }
         <div class="row mt-5">
             <div class="col-md-6 mb-4">
                 <div class="card">
@@ -175,7 +178,8 @@
                     <img src="~/Images/cinemaHouse.jpg" class="card-img-top" alt="Our Cinema">
                     <div class="card-body">
                         <h5 class="card-title">Low-Fidelity</h5>
-                        <p class="card-text">Low-Fidelity Wireframe picture of our website
+                        <p class="card-text">
+                            Low-Fidelity Website Wireframes: Design Concept Preview
                         </p>
                     </div>
                     <div class="card-footer">
@@ -184,9 +188,9 @@
                                 Show Wireframes
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">Wireframe 1</a></li>
-                                <li><a class="dropdown-item" href="#">Wireframe 2</a></li>
-                                <li><a class="dropdown-item" href="#">Wireframe 3</a></li>
+                                <li><a class="dropdown-item" href="~/Images/HomePageMCinema_Wireframe.png">Home Page</a></li>
+                                <li><a class="dropdown-item" href="~/Images/About Us Page.png">About Us Page</a></li>
+                                <li><a class="dropdown-item" href="~/Images/Cinema Library Page.png">Cinema Library Page</a></li>
                                 <li><a class="dropdown-item" href="#">Wireframe 4</a></li>
                                 <li><a class="dropdown-item" href="#">Wireframe 5</a></li>
                             </ul>
@@ -199,6 +203,7 @@
         </div>
 
     </div>
+</body>
 
 
 
