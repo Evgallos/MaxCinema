@@ -1,23 +1,18 @@
 ﻿<div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
-            <button class="btn btn-primary" id="RegMem">Rigistered Member</button>
-        </div>
-        <div class="col-md-6">
-            <a class="btn btn-primary" asp-action="CreateCustomer" asp-controller="Customer">Become A Member</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
+            <button class="btn btn-primary mx-2 my-2" id="RegMem">Rigistered Member</button>
             <form asp-action="CustomerCheckIn" id="email" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <label>Email Address</label>
-                <input type="email" name="inputEmail" required />
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <input type="email" name="inputEmail" class="mx-2 my-2" required /><br />
+                <button type="submit" class="btn btn-primary mx-2 my-2">Submit</button>
             </form>
         </div>
+        <div class="col-md-6">
+            <a class="btn btn-success mx-2 my-2" asp-action="CreateCustomer" asp-controller="Customer">Become A Member</a>
+        </div>
     </div>
-
 </div>
 
 <script>
