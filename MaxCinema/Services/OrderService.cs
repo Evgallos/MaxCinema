@@ -35,5 +35,13 @@ namespace MaxCinema.Services
                 .Include(o => o.Customer)
                 .FirstOrDefault();
         }
+
+        public List<Order> GetOrdersByEmail(string email)
+        {
+            List<Order> ListOrder = _db.Orders.Where(x => x.Customer.EmailAddress == email).OrderByDescending(o => o.OrderDate)
+                .Include(o => o.ListOrderRow).Include(o => o.Customer).ToList();
+
+            return ListOrder;
+        }
     }
 }

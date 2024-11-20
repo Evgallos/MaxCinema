@@ -9,6 +9,7 @@ namespace MaxCinema.Services
         public List<Order> GetAll();
 
         public Order GetBigestOrder();
+        public List<Order> GetOrdersByEmail(string email);
 
 
     }

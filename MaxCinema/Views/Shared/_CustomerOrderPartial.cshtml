@@ -1,0 +1,54 @@
+﻿@model MaxCinema.Models.VM.CustomerOrderVM
+
+<div class="container-fluid border rounded mb-3 p-3 shadow-sm">
+    <div class="row">
+        <span class=" col-md-6"><strong>Order date: @Model.OrderDate</strong></span>
+        <span class=" col-md-6"><strong>Customer Name: @Model.CustomerName</strong></span>
+    </div>
+    @{
+        int count = 0;
+        decimal sum = 0;
+    }
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="col-md-6">
+                            Movie
+                        </th>
+                        <th class="col-md-3">
+                            Unit Price
+                        </th>
+                        <th class="col-md-3">
+                            Quantity
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ListMovie)
+                    {
+                        <tr>
+                            <td class="col-md-6">
+                                @item.Title
+                            </td>
+                            <td class="col-md-3">
+                                @item.Price
+                            </td>
+                            <td class="col-md-3">
+                                @item.Quantity
+                            </td>
+                        </tr>
+                        sum += item.Price * item.Quantity;
+                        count += item.Quantity;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><span><strong>Total Amount: @count </strong></span></div>
+        <div class="col-md-6"><span><strong>Total Cost: @sum SEK</strong></span></div>
+    </div>
+</div>
+

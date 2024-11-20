@@ -1,12 +1,8 @@
-﻿@model IEnumerable<MaxCinema.Models.Order>
+﻿@model IEnumerable<MaxCinema.Models.VM.CustomerOrderVM>
+
 
 @foreach(var item in Model)
 {
-    <div>@item.Id</div>
-    <div>@item.OrderDate</div>
+    <partial name="_CustomerOrderPartial" model="@item" />
 
-    foreach(var orderRow in @item.ListOrderRow)
-    {
-        <div>@orderRow.MovieId</div>
-    }
 }
