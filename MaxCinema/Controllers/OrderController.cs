@@ -22,7 +22,8 @@ namespace MaxCinema.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            List<Order> orderList = _orderService.GetOrderListFor(0);
+            return View(orderList);
         }
 
         public IActionResult OrderToConfirm() 
