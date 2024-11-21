@@ -4,11 +4,11 @@
     ViewData["Title"] = "Register as customer";
 }
 
-<h1>Register as customer</h1>
+<h1 class="family-font">Register as customer</h1>
 
-<h3>@TempData["EmailCheck"]</h3>
+<h3 class="family-font">@TempData["EmailCheck"]</h3>
 <hr />
-<div class="row">
+<div class="row family-font">
     <div class="col-md-6 glass-effect red-border mx-auto">
         <form asp-action="CreateCustomer">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -70,7 +70,7 @@
     </div>
 </div>
 
-<div>
+<div class="family-font">
     <a asp-action="Index"></a>
 </div>
 

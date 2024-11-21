@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<MaxCinema.Models.VM.CustomerOrderVM>
 
-<h3>@ViewBag.Name | Number of orders : @ViewBag.OrderCount </h3> 
+<h3 class="family-font">@ViewBag.Name | Number of orders : @ViewBag.OrderCount </h3> 
 @foreach(var item in Model)
 {
-    <partial name="_CustomerOrderPartial" model="@item" />
+    <partial name="_CustomerOrderPartial" model="@item"  class="family-font"/>
 
 }

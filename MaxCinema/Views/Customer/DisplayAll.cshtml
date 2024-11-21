@@ -4,22 +4,22 @@
     ViewData["Title"] = "DisplayAll";
 }
 
-<h1>Admin Console</h1>
-<body>
+<h1 class="family-font">Admin Console</h1>
+<body class="family-font">
     <h4>Create - Add - Edit - Customer</h4>
     <div>
         <p>
             <a asp-action="CreateCustomer" class="btn btn-warning btn-sm box-shadow">Create New</a>
         </p>
     </div>
-    <div class="container"></div>
+    <div class="container family-font"></div>
     <div class="btnAccess">
         <div class="position-absolute top-0 end-0 p-3 m-5">
-            <a href="https://localhost:7022/Movie" class="btn btn-primary mb-3 box-shadow m-3" tabindex="-1" role="button" aria-disabled="true">Movie Editor</a>
+            <a href="https://localhost:7022/Movie" class="btn btn-primary mb-3 box-shadow m-3 family-font" tabindex="-1" role="button" aria-disabled="true">Movie Editor</a>
         </div>
     </div>
 
-    <div class="row mt-5">
+    <div class="row mt-5 family-font">
         @foreach (var item in Model)
         {
             <div class="col-md-6 mb-4 glass-effect box-shadow red-border">

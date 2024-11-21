@@ -162,6 +162,30 @@ body {
     counter-reset: list-counter;
 }
 
+/*--Evangelos - Font Family Times New Roman*/
+.family-font{
+    font-family:'Times New Roman';
+}
+
+/*CSS for the ol list in our home page*/
+ol.numbered-list {
+    padding-left: 1.5em;  Control spacing between numbers and text 
+}
+
+    ol.numbered-list li {
+        display: block;  Ensures each list item is a block element 
+        list-style-position: inside;  Numbers are inside the list item 
+        margin-bottom: 1rem;  Adds space between each item
+        padding-left: 0.5em;  Adds space between number and text
+    }
+    /*  -- Evangelos Testing new design of the bar and DetailMovie view all the border gets stripes*/
+.striped-background {
+    background: repeating-linear-gradient(45deg, rgb(236, 142, 142) 0%, rgb(236, 142, 142) 15%, transparent 30%, transparent 40%);
+    box-shadow: inset 15px 0px 30px rgba(0, 0, 0, 0.2); 
+}
+
+
+
 
 
 
