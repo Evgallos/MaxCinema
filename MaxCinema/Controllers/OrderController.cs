@@ -26,7 +26,7 @@ namespace MaxCinema.Controllers
         }
 
         public IActionResult OrderToConfirm() 
-        {
+        {// pass email via session
             string email = HttpContext.Session.Get<string>("CustomerEmail");
             var customer = _customerService.GetCustomerByEmail(email);
             
@@ -57,6 +57,7 @@ namespace MaxCinema.Controllers
 
             customer.Orders.Add(newOrder);
 
+            //clear session after order is saved
             HttpContext.Session.Clear();
 
             return RedirectToAction("OrderCompleted");
@@ -69,6 +70,8 @@ namespace MaxCinema.Controllers
 
         public IActionResult CustomerOrderDisplay(string email)
         {
+            string email = (string)TempData["CustomerEmail"];
+
             var orders = _orderService.GetOrdersByEmail(email); //include orderRow and customer
             int orderCount = orders.Count();
             ViewBag.OrderCount = orderCount;
