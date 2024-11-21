@@ -43,5 +43,27 @@ namespace MaxCinema.Services
 
             return ListOrder;
         }
+
+        public List<Order> GetOrderListFor(int customerId)
+        {
+            List<Order> orders = new List<Order>();
+
+            if (customerId == null || customerId == 0)
+            {
+                orders = _db.Orders.Include(o => o.ListOrderRow)
+                    .Include(o => o.Customer)
+                    .OrderByDescending (o => o.OrderDate)
+                    .ToList();
+            }else
+            {
+                orders = _db.Orders.Include(o => o.ListOrderRow)
+                    .Include(o => o.Customer)
+                    .Where(o => o.Customer.Id == customerId)
+                    .OrderByDescending(o => o.OrderDate)
+                    .ToList();
+            }
+
+            return orders;
+        }
     }
 }
