@@ -30,7 +30,7 @@ namespace MaxCinema.Models
                 return $"{Title} ({ReleaseYear})"; }
                 }
 
-        public virtual ICollection<OrderRow> OrdeRows { get; set; }
+        public virtual ICollection<OrderRow>? OrdeRows { get; set; }
 
     }
 }
