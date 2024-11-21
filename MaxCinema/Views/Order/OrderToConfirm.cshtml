@@ -1,8 +1,8 @@
 ﻿@model MaxCinema.Models.Customer
 
-<h1>Customer information</h1>
-<partial name="_CustomerPartial" model="@Model" />
-<a asp-action="CartDisplay" asp-controller="Cart" class="btn btn-primary">Back to the cart</a>
+<h1 class="family-font">Customer information</h1>
+<partial name="_CustomerPartial" model="@Model" class="family-font" />
+<a asp-action="CartDisplay" asp-controller="Cart" class="btn btn-primary family-font">Back to the cart</a>
 <br />
 <br />
-<a asp-action="OrderConfirmed" class="btn btn-primary">Confirm the order</a>
+<a asp-action="OrderConfirmed" class="btn btn-primary family-font">Confirm the order</a>

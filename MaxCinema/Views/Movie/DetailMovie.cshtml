@@ -6,20 +6,17 @@
     ViewData["Title"] = "DetailMovie";
 }
 
-<h1>@Model.TitleAndYear</h1>
 
-<div class="container mt-5">
 
+<div class="container mt-5 family-font">
+    <h1 class="text-end family-font red-border bg-body-secondary mb-3 p-md-1 rounded shadow-sm body striped-background">@Model.TitleAndYear</h1>
     <div class="row">
         <div class="col-md-4">
             <img src="@Model.Url" class="img-fluid" alt="@Model.Id">
         </div>
         <div class="col-md-8">
-            <h3 class="text-center">@Model.Title</h3>
-            <p class="text-center">This is a description of the movie>>> <!--Add something here via models--></p>
-
-            <div class="text-center">
-                <button onclick="AddToCart(@Model.Id)" type="button" class="btn btn-primary btn-md-3 box-shadow m-3">
+            <div class="text-center family-font">
+                <button onclick="AddToCart(@Model.Id)" type="button" class="btn btn-danger btn-md-3 box-shadow m-3">
                     <span class="glyphicon glyphicon-shopping-cart">
                     </span>
                     <b> Add to Cart </b>
@@ -29,18 +26,34 @@
             <div class="accordion mt-3" id="movieDetailsAccordion">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Movie Details
+                        <button class="accordion-button bg-danger-subtle red-border striped-background" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <h4 class="family-font">
+                                Movie Details
+                            </h4>
                         </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#movieDetailsAccordion">
                         <div class="accordion-body">
-                            <div class="list-unstyled">
-                            <ul>
-                                <li><strong>Director:</strong>@Model.Director</li>
-                                <li><strong>Release Year:</strong>@Model.ReleaseYear</li>
-                                <li><strong>Price:</strong>@Model.Price</li>
-                            </ul>
+                            <div class="glass-effect red-border bg-danger-subtle">
+                                <div class="align-baseline">
+                                    <ul class="list-group-item-action">
+                                        <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><strong class="family-font">Director:</strong>@Model.Director</li>
+                                        <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><strong class="family-font">Release Year:</strong>@Model.ReleaseYear</li>
+                                        <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><strong class="family-font">Price:</strong>@Model.Price</li><br />
+                                        <li class="mb-3 p-md-3 rounded shadow-md icon-link hover-box body"><h4 class="family-font"><strong class="mb-3 p-sm-1 rounded shadow align-content-sm-around body align-text-top">Movie Description:</strong></h4></li>
+                                        <li class="mb-3 p-md-3 rounded shadow align-content-md-around  icon-link hover-box bg-danger-subtle">
+                                            <p class="family-font">
+                                                Lorem ipsum odor amet,
+                                                consectetuer adipiscing elit. Dictum vulputate nascetur ad inceptos taciti. Nascetur lobortis fusce gravida neque; sit duis
+                                                blandit erat dignissim. Ex mus hendrerit, lacinia rhoncus posuere turpis. Senectus eu dapibus accumsan est quis
+                                                efficitur dignissim praesent. At nulla vivamus sem vehicula ultricies.
+                                                Id id volutpat faucibus tristique amet dignissim tincidunt cras. Litora a
+                                                litora donec cubilia in primis porta litora. Semper litora ad tempus nec justo aenean.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <small class="text-muted"> &copy; Max Cinema</small>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -48,8 +61,18 @@
             </div>
         </div>
     </div>
+            <div class="form-group box-shadow family-font m-5">
+                <a asp-action="Index" class="btn btn-warning">Back to List</a>
+            </div>
 </div>
- <div>
+
+
+
+
+
+
+
+
 
     @* <hr />
     <dl class="row">
@@ -84,9 +107,6 @@
             @Html.DisplayFor(model => model.Url)
         </dd>
     </dl> *@
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+
 
