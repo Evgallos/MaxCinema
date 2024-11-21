@@ -34,7 +34,7 @@ namespace MaxCinema.Controllers
             }
            
             else
-            {
+            {//pass data via TempData from controller/action to view
                 TempData["EmailCheck"]= "This email address is already registered!";
                 return View();
             }           
@@ -46,23 +46,24 @@ namespace MaxCinema.Controllers
             return View(customerList);
         }
 
+        //CustomerCheckIn: Navbar "Customer" button goes to check in page then to display orders
         public IActionResult CustomerCheckIn()
         {
             return View();
         }
+        //<input "name"=inputEmail>, pass data via "Post" method "Submit" button
         [HttpPost]
-            public IActionResult CustomerCheckIn(string inputEmail) 
+        public IActionResult CustomerCheckIn(string inputEmail) 
         {
             var customer = _customerService.GetCustomerByEmail(inputEmail);
             if (customer == null)
-            {
+            {//pass data via TempData from controller/action to controller/action
                 TempData["EmailCheck"] = "This email is not registered. Become our member now!";
                 return RedirectToAction("CreateCustomer", "Customer");
             }
             else
-            {
-                TempData["CustomerEmail"] = inputEmail;
-                return RedirectToAction("CustomerOrderDisplay", "Order");
+            {//pass data via route
+                return RedirectToAction("CustomerOrderDisplay", "Order", new { email= inputEmail });
             }
         }
 
