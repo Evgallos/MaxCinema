@@ -61,8 +61,7 @@ namespace MaxCinema.Controllers
             }
             else
             {
-                TempData["CustomerEmail"] = inputEmail;
-                return RedirectToAction("CustomerOrderDisplay", "Order");
+                return RedirectToAction("CustomerOrderDisplay", "Order", new { email= inputEmail });
             }
         }
 
