@@ -3,6 +3,7 @@ using MaxCinema.Models;
 using MaxCinema.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace MaxCinema.Controllers
 {
@@ -36,6 +37,10 @@ namespace MaxCinema.Controllers
             return View();
         }
         public IActionResult Display()
+        {
+            return View();
+        }
+        public IActionResult DetailMovie()
         {
             return View();
         }
