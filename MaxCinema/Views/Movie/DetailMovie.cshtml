@@ -1,0 +1,88 @@
+﻿@model MaxCinema.Models.Movie
+@using System.ComponentModel.DataAnnotations;
+@using MaxCinema.Data;
+
+@{
+    ViewData["Title"] = "DetailMovie";
+}
+
+<h1>@Model.TitleAndYear</h1>
+
+<div class="container mt-5">
+
+    <div class="row">
+        <div class="col-md-4">
+            <img src="@Model.Url" class="img-fluid" alt="@Model.Id">
+        </div>
+        <div class="col-md-8">
+            <h3 class="text-center">@Model.Title</h3>
+            <p class="text-center">This is a description of the movie>>> <!--Add something here via models--></p>
+
+            <div class="text-center">
+                <button class="btn btn-danger box-shadow">Add to Cart</button>
+            </div>
+
+            <div class="accordion mt-3" id="movieDetailsAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Movie Details
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#movieDetailsAccordion">
+                        <div class="accordion-body">
+                            <div class="list-unstyled">
+                            <ul>
+                                <li><strong>Director:</strong>@Model.Director</li>
+                                <li><strong>Release Year:</strong>@Model.ReleaseYear</li>
+                                <li><strong>Price:</strong>@Model.Price</li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <div>
+
+    @* <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Director)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Director)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReleaseYear)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReleaseYear)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Url)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Url)
+        </dd>
+    </dl> *@
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -5,6 +5,13 @@
 <br />
 
 <body>
+     
+        <div class="btnAccess">
+            <div class="position-absolute top-0 end-0 p-3 m-5">
+                <a asp-controller="Customer" asp-action="CustomerCheckIn" class="btn btn-danger mb-3 box-shadow m-3" tabindex="-1" role="button" aria-disabled="true">Customer</a>
+                <a href="Customer/DisplayAll" class="btn btn-primary mb-3 box-shadow m-3" tabindex="-1" role="button" aria-disabled="true">Admin</a>
+            </div>
+        </div>
     <div class="container">
   
     
@@ -42,7 +49,7 @@
             </button>
         
     </div>
-    }
+    
         <div class="row mt-5">
             <div class="col-md-6 mb-4">
                 <div class="card">
@@ -52,7 +59,7 @@
                         <p class="card-text">The movies with the highest number of orders.</p>
                     </div>
                     <div class="card-footer">
-                        <div class="dropdown dropstart">
+                        <div class="dropdown dropstart d-none d-sm-block">
                             <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                 Show Movies
                             </button>
@@ -64,6 +71,30 @@
                                 <li><a class="dropdown-item" href="Movie">@Model.Mostpop[3].TitleAndYear</a></li>
                                 <li><a class="dropdown-item" href="Movie">@Model.Mostpop[4].TitleAndYear</a></li>
                             </ul>
+                        </div>
+
+                        <!-- This Code is for Small Screens Accordion Above is for big Screens the list Drop Down Menu Button Just comment it for anyone knows -->
+                        <div class="accordion d-block d-sm-none" id="accordionMostopopMovies">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingMovies">
+                                    <button class="accordion-button bg-danger-subtle red-border" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMovies" aria-expanded="true" aria-controls="collapseMovies">
+                                        Show Movies
+                                    </button>
+                                </h2>
+                                <div id="collapseMovies" class="accordion-collapse collapse show" aria-labelledby="headingMovies" data-bs-parent="#accordionMostpopMovies">
+                                    <div class="accordion-body">
+                                        <div class="glass-effect red-border bg-danger-subtle">
+                                            <ul class="numbered-list">
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Mostpop[0].TitleAndYear</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Mostpop[1].TitleAndYear</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Mostpop[2].TitleAndYear</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Mostpop[3].TitleAndYear</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Mostpop[4].TitleAndYear</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <small class="text-muted">Top 5 movies</small>
                     </div>
@@ -78,7 +109,7 @@
                         <p class="card-text">Top 5 most recently released movies.</p>
                     </div>
                     <div class="card-footer">
-                        <div class="dropdown dropstart">
+                        <div class="dropdown dropstart d-none d-sm-block">
                             <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                 Show Movies
                             </button>
@@ -89,6 +120,29 @@
                                 <li><a class="dropdown-item" href="#">@Model.Newest[3].TitleAndYear</a></li>
                                 <li><a class="dropdown-item" href="#">@Model.Newest[4].TitleAndYear</a></li>
                             </ul>
+                        </div>
+                        <!-- This Code is for Small Screens Accordion Above is for big Screens the list Drop Down Menu Button Just comment it for anyone knows -->
+                        <div class="accordion d-block d-sm-none" id="accordionNewestMovies">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingMovies">
+                                    <button class="accordion-button bg-danger-subtle red-border" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMovies" aria-expanded="true" aria-controls="collapseMovies">
+                                        Show Movies
+                                    </button>
+                                </h2>
+                                <div id="collapseMovies" class="accordion-collapse collapse show" aria-labelledby="headingMovies" data-bs-parent="#accordionNewestMovies">
+                                    <div class="accordion-body">
+                                        <div class="glass-effect red-border bg-danger-subtle">
+                                            <ul class="numbered-list">
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Newest[0].TitleAndYear</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Newest[1].TitleAndYear</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Newest[2].TitleAndYear</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Newest[3].TitleAndYear</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Newest[4].TitleAndYear</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <small class="text-muted">Top 5 newest movies</small>
                     </div>
@@ -103,7 +157,8 @@
                         <p class="card-text">Top 5 oldest movies based on release year.</p>
                     </div>
                     <div class="card-footer">
-                        <div class="dropdown dropstart">
+
+                        <div class="dropdown dropstart d-none d-sm-block">
                             <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                 Show Movies
                             </button>
@@ -115,6 +170,31 @@
                                 <li><a class="dropdown-item" href="#">@Model.Oldest[4].TitleAndYear</a></li>
                             </ul>
                         </div>
+
+                        <!-- This Code is for Small Screens Accordion Above is for big Screens the list Drop Down Menu Button Just comment it for anyone knows -->
+                        <div class="accordion d-block d-sm-none" id="accordionOldestMovies">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingMovies">
+                                    <button class="accordion-button bg-danger-subtle red-border" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMovies" aria-expanded="true" aria-controls="collapseMovies">
+                                        Show Movies
+                                    </button>
+                                </h2>
+                                <div id="collapseMovies" class="accordion-collapse collapse show" aria-labelledby="headingMovies" data-bs-parent="#accordionOldestMovies">
+                                    <div class="accordion-body">
+                                        <div class="glass-effect red-border bg-danger-subtle">
+                                            <ul class="numbered-list">
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Oldest[0].TitleAndYear</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Oldest[1].TitleAndYear</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Oldest[2].TitleAndYear</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Oldest[3].TitleAndYear</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Oldest[4].TitleAndYear</a></li>
+                                          </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <small class="text-muted">Top 5 oldest movies</small>
                     </div>
                 </div>
@@ -128,7 +208,7 @@
                         <p class="card-text">Top 5 movies with the lowest prices.</p>
                     </div>
                     <div class="card-footer">
-                        <div class="dropdown dropstart">
+                        <div class="dropdown dropstart d-none d-sm-block">
                             <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                 Show Movies
                             </button>
@@ -139,6 +219,29 @@
                                 <li><a class="dropdown-item" href="#">@Model.Cheapest[3].TitleAndYear</a></li>
                                 <li><a class="dropdown-item" href="#">@Model.Cheapest[4].TitleAndYear</a></li>
                             </ul>
+                        </div>
+                        <!-- This Code is for Small Screens Accordion Above is for big Screens the list Drop Down Menu Button Just comment it for anyone knows -->
+                        <div class="accordion d-block d-sm-none" id="accordionCheapestMovies">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingMovies">
+                                    <button class="accordion-button bg-danger-subtle red-border" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMovies" aria-expanded="true" aria-controls="collapseMovies">
+                                        Show Movies
+                                    </button>
+                                </h2>
+                                <div id="collapseMovies" class="accordion-collapse collapse show" aria-labelledby="headingMovies" data-bs-parent="#accordionCheapestMovies">
+                                    <div class="accordion-body">
+                                        <div class="glass-effect red-border bg-danger-subtle">
+                                            <ul class="numbered-list">
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Cheapest[0].TitleAndYear</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Cheapest[1].TitleAndYear</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Cheapest[2].TitleAndYear</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Cheapest[3].TitleAndYear</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.Cheapest[4].TitleAndYear</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <small class="text-muted">Top 5 cheapest movies</small>
                     </div>
@@ -154,13 +257,32 @@
                         <p class="card-text">The customer with the highest total order value.</p>
                     </div>
                     <div class="card-footer">
-                        <div class="dropdown dropstart">
+                        <div class="dropdown dropstart d-none d-sm-block">
                             <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                 Top Customer
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <li><a class="dropdown-item" href="#">@Model.BigestOrder.FullName</a></li>
                             </ul>
+                        </div>
+                        <!-- This Code is for Small Screens Accordion Above is for big Screens the list Drop Down Menu Button Just comment it for anyone knows -->
+                        <div class="accordion d-block d-sm-none" id="accordionBigestOrderFullName">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingMovies">
+                                    <button class="accordion-button bg-danger-subtle red-border" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMovies" aria-expanded="true" aria-controls="collapseMovies">
+                                        Show Movies
+                                    </button>
+                                </h2>
+                                <div id="collapseMovies" class="accordion-collapse collapse show" aria-labelledby="headingMovies" data-bs-parent="#accordionBigestOrderFullName">
+                                    <div class="accordion-body">
+                                        <div class="glass-effect box-shadow red-border bg-danger-subtle">
+                                            <ul class="list-unstyled">
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">@Model.BigestOrder.FullName</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <small class="text-muted">Top customer</small>
                     </div>
@@ -176,7 +298,7 @@
                         </p>
                     </div>
                     <div class="card-footer">
-                        <div class="dropdown dropstart">
+                        <div class="dropdown dropstart d-none d-sm-block">
                             <button class="btn btn-danger btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                 Show Wireframes
                             </button>
@@ -187,6 +309,29 @@
                                 <li><a class="dropdown-item" href="#">Wireframe 4</a></li>
                                 <li><a class="dropdown-item" href="#">Wireframe 5</a></li>
                             </ul>
+                        </div>
+                        <!-- This Code is for Small Screens Accordion Above is for big Screens the list Drop Down Menu Button Just comment it for anyone knows -->
+                        <div class="accordion d-block d-sm-none card-footer" id="accordionShowWireframes">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="Wireframes">
+                                    <button class="accordion-button bg-danger-subtle red-border" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMovies" aria-expanded="true" aria-controls="collapseMovies">
+                                        Show Wireframes
+                                    </button>
+                                </h2>
+                                <div id="collapseMovies" class="accordion-collapse collapse show" aria-labelledby="headingMovies" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        <div class="glass-effect red-border bg-danger-subtle">
+                                            <ul class="numbered-list">
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="~/Images/Home Page.png">Home Page</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="~/Images/About Us Page.png">About Us Page</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="~/Images/Cinema Library Page.png">Cinema lib Page</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">Customer Page</a></li>
+                                                <li class="mb-3 p-sm-1 rounded shadow-sm icon-link hover-box body"><a href="#">Admin Page</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <small class="text-muted"> &copy; Max Cinema</small>
                     </div>
