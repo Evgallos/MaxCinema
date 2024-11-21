@@ -70,8 +70,6 @@ namespace MaxCinema.Controllers
 
         public IActionResult CustomerOrderDisplay(string email)
         {
-            string email = (string)TempData["CustomerEmail"];
-
             var orders = _orderService.GetOrdersByEmail(email); //include orderRow and customer
             int orderCount = orders.Count();
             ViewBag.OrderCount = orderCount;
