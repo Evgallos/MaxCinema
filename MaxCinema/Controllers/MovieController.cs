@@ -40,9 +40,10 @@ namespace MaxCinema.Controllers
         {
             return View();
         }
-        public IActionResult DetailMovie()
+        public IActionResult DetailMovie(int id)
         {
-            return View();
+            var movie = _movieService.Get(id);
+            return View(movie);
         }
     }
 }
