@@ -8,8 +8,8 @@
 
 <div class="container-fluid family-font">
     <div class="row ">
-        <div class="col-md-10">
-            <table class="table">
+        <div class="col-md-12">
+            <table class="table table-secondary table-striped">
                 <thead>
                     <tr>
                         <th>
@@ -34,7 +34,7 @@
                                 @item.Movie.Title
                             </td>
                             <td>
-                                <div id=@($"{item.Movie.Id}Price")>@item.Movie.Price</div>
+                                <div id=@($"{item.Movie.Id}Price")>@item.Movie.Price SEK</div>
                             </td>
                             <td>
                                 <span id=@($"{item.Movie.Id}Quantity")>@item.Quantity</span>
@@ -47,7 +47,7 @@
                                     sum += qup;
                                     count += @item.Quantity;
                                 }
-                                <div id=@($"{item.Movie.Id}Qup")>@qup</div>
+                                <div id=@($"{item.Movie.Id}Qup")>@qup SEK</div>
                             </td>
                         </tr>
                     }
@@ -57,8 +57,8 @@
     </div>
 </div>
 
-<strong>Total Pieces</strong>
+<strong>Total Amout</strong>
 <div id="totalAmount">@count</div>
-<strong>Total Sum</strong>
-<div id="totalCost">@sum</div>
+<strong>Total Cost</strong>
+<div id="totalCost">@sum SEK</div>
 <a asp-action="CheckOutEmail" class="btn btn-primary">Check Out</a>
