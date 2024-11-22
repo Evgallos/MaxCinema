@@ -1,4 +1,5 @@
 ﻿using MaxCinema.Models;
+using MaxCinema.Models.VM;
 
 namespace MaxCinema.Services
 {
@@ -9,8 +10,8 @@ namespace MaxCinema.Services
         public List<Order> GetAll();
 
         public Order GetBigestOrder();
-        public List<Order> GetOrdersByEmail(string email);
+        public List<CustomerOrderVM> GetOrdersByEmail(string email);
 
-        public List<Order> GetOrderListFor(int customerId);
+        public List<CustomerOrderVM> GetOrderListAll();
     }
 }

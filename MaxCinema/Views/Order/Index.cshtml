@@ -1,9 +1,13 @@
-﻿@model IEnumerable<MaxCinema.Models.Order>
+﻿@model IEnumerable<MaxCinema.Models.VM.CustomerOrderVM>
+
+@foreach (var item in Model)
+{
+    <partial name="_CustomerOrderPartial" model="@item" class="family-font" />
+}
 
 
 
-
-<html>
+@* <html>
 <head class="family-font">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -108,5 +112,5 @@
     </script>
     }
 </body>
-</html>
+</html> *@
     
