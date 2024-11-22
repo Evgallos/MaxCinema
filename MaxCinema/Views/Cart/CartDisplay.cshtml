@@ -12,17 +12,17 @@
             <table class="table table-secondary table-striped">
                 <thead>
                     <tr>
-                        <th>
+                        <th class="col-md-5">
                             Movie
                         </th>
-                        <th>
-                            Unit Price
+                        <th class="col-md-2">
+                            Unit Price / SEK
                         </th>
-                        <th>
+                        <th class="col-md-3">
                             Quantity
                         </th>
-                        <th>
-                            Sum
+                        <th class="col-md-2">
+                            Sum / SEK
                         </th>
                     </tr>
                 </thead>
@@ -34,7 +34,7 @@
                                 @item.Movie.Title
                             </td>
                             <td>
-                                <div id=@($"{item.Movie.Id}Price")>@item.Movie.Price SEK</div>
+                                <div id=@($"{item.Movie.Id}Price")>@item.Movie.Price</div>
                             </td>
                             <td>
                                 <span id=@($"{item.Movie.Id}Quantity")>@item.Quantity</span>
@@ -47,7 +47,7 @@
                                     sum += qup;
                                     count += @item.Quantity;
                                 }
-                                <div id=@($"{item.Movie.Id}Qup")>@qup SEK</div>
+                                <div id=@($"{item.Movie.Id}Qup")>@qup</div>
                             </td>
                         </tr>
                     }
@@ -59,6 +59,6 @@
 
 <strong>Total Amout</strong>
 <div id="totalAmount">@count</div>
-<strong>Total Cost</strong>
-<div id="totalCost">@sum SEK</div>
+<strong>Total Cost / SEK</strong>
+<div id="totalCost">@sum</div>
 <a asp-action="CheckOutEmail" class="btn btn-primary">Check Out</a>
