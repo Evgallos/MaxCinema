@@ -1,6 +1,8 @@
 using MaxCinema.Data;
 using MaxCinema.Services;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace MaxCinema
 {

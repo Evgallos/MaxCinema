@@ -43,8 +43,8 @@ namespace MaxCinema.Services
         public List<Movie> GetTopFivePopularMovies()
         {
             return _db.Movies
-                    .Include(m => m.OrdeRows)
-                    .OrderByDescending(o => o.OrdeRows.Count())
+                    .Include(m => m.OrderRows)
+                    .OrderByDescending(o => o.OrderRows.Count())
                     .Take(5)
                     .ToList();
         }
