@@ -1,5 +1,6 @@
 ﻿using MaxCinema.Data;
 using MaxCinema.Models;
+using MaxCinema.Models.VM;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
@@ -36,33 +37,72 @@ namespace MaxCinema.Services
                 .FirstOrDefault();
         }
 
-        public List<Order> GetOrdersByEmail(string email)
+        public List<CustomerOrderVM> GetOrdersByEmail(string email)
         {
-            List<Order> ListOrder = _db.Orders.Where(x => x.Customer.EmailAddress == email).OrderByDescending(o => o.OrderDate)
-                .Include(o => o.ListOrderRow).Include(o => o.Customer).ToList();
+            List<CustomerOrderVM> ListOrder = _db.Orders.Where(x => x.Customer.EmailAddress == email).OrderByDescending(o => o.OrderDate)
+                .Include(o => o.ListOrderRow).Include(o => o.Customer)
+                 .Select(x => new CustomerOrderVM()
+                 {
+                     OrderId = x.Id,
+                     CustomerId = x.Customer.Id,
+                     CustomerName = x.Customer.Firstname + " " + x.Customer.Lastname,
+                     OrderDate = x.OrderDate,
 
+                     ListMovie = x.ListOrderRow
+                        .GroupBy(x => x.MovieId)
+                        .OrderBy(g => g.Key)
+                .Select(g => new
+                {
+                    Quantity = g.Count(),
+                    MovieId = g.Key,
+                    Price = g.Select(x => x.Price).FirstOrDefault()
+                })
+                .Join(_db.Movies,
+                qmp => qmp.MovieId,
+                movie => movie.Id,
+                (qmp, movie) => new MovieInOrderVM()
+                {
+                    MovieId = movie.Id,
+                    Title = movie.Title,
+                    Quantity = qmp.Quantity,
+                    Price = qmp.Price
+                }).ToList()
+                 }).ToList();
             return ListOrder;
         }
 
-        public List<Order> GetOrderListFor(int customerId)
+        public List<CustomerOrderVM> GetOrderListAll()
         {
-            List<Order> orders = new List<Order>();
-
-            if (customerId == null || customerId == 0)
-            {
-                orders = _db.Orders.Include(o => o.ListOrderRow)
+            var orders = _db.Orders.Include(o => o.ListOrderRow)
                     .Include(o => o.Customer)
-                    .OrderByDescending (o => o.OrderDate)
-                    .ToList();
-            }else
-            {
-                orders = _db.Orders.Include(o => o.ListOrderRow)
-                    .Include(o => o.Customer)
-                    .Where(o => o.Customer.Id == customerId)
                     .OrderByDescending(o => o.OrderDate)
-                    .ToList();
-            }
+                    .Select(x => new CustomerOrderVM()
+                    {
+                        OrderId = x.Id,
+                        CustomerId = x.Customer.Id,
+                        CustomerName = x.Customer.Firstname + " " + x.Customer.Lastname,
+                        OrderDate = x.OrderDate,
 
+                        ListMovie = x.ListOrderRow
+                        .GroupBy(x => x.MovieId)
+                        .OrderBy(g => g.Key)
+                .Select(g => new
+                {
+                    Quantity = g.Count(),
+                    MovieId = g.Key,
+                    Price = g.Select(x => x.Price).FirstOrDefault()
+                })
+                .Join(_db.Movies,
+                qmp => qmp.MovieId,
+                movie => movie.Id,
+                (qmp, movie) => new MovieInOrderVM()
+                {
+                    MovieId = movie.Id,
+                    Title = movie.Title,
+                    Quantity = qmp.Quantity,
+                    Price = qmp.Price
+                }).ToList()
+                    }).ToList();
             return orders;
         }
     }

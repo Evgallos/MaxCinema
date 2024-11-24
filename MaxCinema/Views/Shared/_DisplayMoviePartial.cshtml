@@ -7,10 +7,10 @@
 
 <div class="card text-white bg-danger glass-effect red-border family-font">
     <div class="card">
-        <img src="@Model.Url" class="card-img-top" alt="MovieId">
+        <img src="@Model.Url" class="card-img-top" alt=@Model.Id>
         <div class="card-body">
             <h5 class="card-title family-font" title="Harry Potter">@Model.Title</h5>
-            <p class="card-text family-font"><strong>Release Year:@Model.ReleaseYear | Director:@Model.Director | Price:@Model.Price</strong></p>
+            <p class="card-text family-font"><strong>Release Year:@Model.ReleaseYear | Director:@Model.Director | Price:@Model.Price SEK</strong></p>
         </div>
         <div class="card-footer">
             <button onclick="AddToCart(@Model.Id)" type="button" class="btn btn-primary btn-md-3 box-shadow m-3">

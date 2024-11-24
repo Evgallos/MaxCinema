@@ -20,6 +20,7 @@ namespace MaxCinema.Models
 
         [Required]
         [DataType(DataType.Currency)]
+        [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = false)]
         public decimal Price { get; set; }
 
         [StringLength(300)]
@@ -30,7 +31,7 @@ namespace MaxCinema.Models
                 return $"{Title} ({ReleaseYear})"; }
                 }
 
-        public virtual ICollection<OrderRow>? OrdeRows { get; set; }
+        public virtual ICollection<OrderRow>? OrderRows { get; set; }
 
     }
 }

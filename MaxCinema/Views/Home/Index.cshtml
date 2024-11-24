@@ -65,11 +65,11 @@
                             </button>
                             <ol class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 @* ToDo: Make it so it goes to the detailed view of that movie *@
-                                <li><a class="dropdown-item" href="Movie">@Model.Mostpop[0].TitleAndYear</a></li>
-                                <li><a class="dropdown-item" href="Movie">@Model.Mostpop[1].TitleAndYear</a></li>
-                                <li><a class="dropdown-item" href="Movie">@Model.Mostpop[2].TitleAndYear</a></li>
-                                <li><a class="dropdown-item" href="Movie">@Model.Mostpop[3].TitleAndYear</a></li>
-                                <li><a class="dropdown-item" href="Movie">@Model.Mostpop[4].TitleAndYear</a></li>
+                                <li><a href="Movie/DetailMovie/@Model.Mostpop[0].Id" class="dropdown-item">@Model.Mostpop[0].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="Movie/DetailMovie/@Model.Mostpop[1].Id">@Model.Mostpop[1].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="Movie/DetailMovie/@Model.Mostpop[2].Id">@Model.Mostpop[2].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="Movie/DetailMovie/@Model.Mostpop[3].Id">@Model.Mostpop[3].TitleAndYear</a></li>
+                                <li><a class="dropdown-item" href="Movie/DetailMovie/@Model.Mostpop[4].Id">@Model.Mostpop[4].TitleAndYear</a></li>
                             </ol>
                         </div>
 
