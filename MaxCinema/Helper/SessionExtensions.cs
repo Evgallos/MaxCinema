@@ -4,7 +4,7 @@ namespace MaxCinema.Helper
 {
     public static class SessionExtensions
     {
-        public static void Set<T>(this ISession session, string key, T value)
+        public static void Set<T>( T value)
         {
             session.SetString(key, JsonSerializer.Serialize(value));
         }
