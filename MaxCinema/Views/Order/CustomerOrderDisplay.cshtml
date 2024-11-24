@@ -3,6 +3,6 @@
 <h3 class="family-font border rounded-2 d-block accor-button glass-effect striped-background">@ViewBag.Name | Number of orders : @ViewBag.OrderCount </h3>
 @foreach(var item in Model)
 {
-    <partial name="_CustomerOrderPartial" model="@item"  class="family-font"/>
+    <partial name="_CustomerOrderPartial" model="@item" class="family-font accor-button glass-effect striped-background" />
 
 }
