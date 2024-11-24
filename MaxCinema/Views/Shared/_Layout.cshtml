@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MaxCinema.styles.css" asp-append-version="true" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
 </head>
 <body class="family-font">
     <header class="family-font">
@@ -49,7 +50,7 @@
                         </div>
                         <div class="nav-item">
                             <a asp-controller="Order" asp-action="Index" class="btn btn-primary me-2">Admin</a>
-                        </div>                       
+                        </div>
                     </div>
                 </div>
 
@@ -63,20 +64,47 @@
             </div>
         </nav>
     </header>
+
     <div class="container family-font">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
+    <!-- Evangelo, Scroll to Top Button -->
+    <button id="scrollToTopBtn" onclick="scrollToTop()">
+        &#11161;  <!--Evangelos I used this Unicode Decimal Code Upwards arrow for the button This is the up arrow symbol you can search in w3school same examples -->
+    </button>
+
     <footer class="border-top footer text-muted family-font">
         <div class="container">
             &copy; 2024 - MaxCinema - <a asp-area="" asp-controller="Home" asp-action="Privacy">About us</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js" class="family-font"></script>
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js" class="family-font"></script>
     <script src="~/js/site.js" asp-append-version="true" class="family-font"></script>
+
+    <script>
+        //--Evangelos I found an instraction with the library Jquery in Javascript library to make it functional, the code i get it online from resources just i 
+        // make small adjustments to can connect to our page Show the button when scrolling down the button will 
+        // reveal when will scroll down the user see the code bellow: 
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('#scrollToTopBtn').fadeIn();
+            } else {
+                $('#scrollToTopBtn').fadeOut();
+            }
+        });
+
+        //--Evangelos i create  Function to scroll to the top from open source i found the code and the solution on open source online, isnt my code all
+        //the idea i took it from online source.
+        function scrollToTop() {
+            $('html, body').animate({ scrollTop: 0 }, 500);
+        }
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
