@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MaxCinema.styles.css" asp-append-version="true" />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-
 </head>
 <body class="family-font">
     <header class="family-font">
@@ -50,7 +49,7 @@
                         </div>
                         <div class="nav-item">
                             <a asp-controller="Order" asp-action="Index" class="btn btn-primary me-2">Admin</a>
-                        </div>
+                        </div>                       
                     </div>
                 </div>
 
@@ -64,13 +63,13 @@
             </div>
         </nav>
     </header>
-
     <div class="container family-font">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
+<<<<<<< HEAD
 
     <!-- Evangelos, Scroll to Top Button -->
 
@@ -80,15 +79,17 @@
         &#11161;  <!--Evangelos I used this Unicode Decimal Code Upwards arrow for the button This is the up arrow symbol you can search in w3school same examples -->
     </button>
 
+=======
+>>>>>>> 0a714c32e7bc8eab17382974f79750764a533b82
     <footer class="border-top footer text-muted family-font">
         <div class="container">
             &copy; 2024 - MaxCinema - <a asp-area="" asp-controller="Home" asp-action="Privacy">About us</a>
         </div>
     </footer>
-
     <script src="~/lib/jquery/dist/jquery.min.js" class="family-font"></script>
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js" class="family-font"></script>
     <script src="~/js/site.js" asp-append-version="true" class="family-font"></script>
+<<<<<<< HEAD
 
     <script>
         //--Evangelos I found an instraction with the library Jquery in Javascript library to make it functional, the code i get it online from resources just i
@@ -113,6 +114,8 @@
         }
     </script>
 
+=======
+>>>>>>> 0a714c32e7bc8eab17382974f79750764a533b82
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

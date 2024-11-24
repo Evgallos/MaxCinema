@@ -2,13 +2,14 @@
 
 <div class="container-fluid border rounded mb-3 p-3 shadow-sm family-font">
     <div class="row">
-        <span class="col-md-6"><strong>Order date: @Model.OrderDate</strong></span>
-        <span class="col-md-6"><strong>Customer Name: @Model.CustomerName</strong></span>
+        <span class=" col-md-6"><strong>Order date: @Model.OrderDate</strong></span>
+        <span class=" col-md-6"><strong>Customer Name: @Model.CustomerName</strong></span>
     </div>
     @{
         int count = 0;
         decimal sum = 0;
     }
+
 
     <div class="accordion" id="orderAccordion">
         <div class="accordion-item">
@@ -56,6 +57,8 @@
                 </div>
             </div>
      </div>
+  </div>
+
     <div class="row">
         <div class="col-md-12">
             <table class="table table-secondary table-striped">
@@ -93,7 +96,7 @@
             </table>
         </div>
     </div>
-    <div class="row family-font mt-3">
+    <div class="row family-font">
         <div class="col-md-6"><span><strong>Total Amount: @count </strong></span></div>
         <div class="col-md-6"><span><strong>Total Cost: @sum SEK</strong></span></div>
     </div>
