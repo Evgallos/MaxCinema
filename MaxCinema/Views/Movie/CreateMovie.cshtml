@@ -5,11 +5,10 @@
     ViewData["Title"] = "CreateMovie";
 }
 
-<h1 class="family-font">Admin Console</h1>
+<h1 class="family-font accor-button glass-effect striped-background red-border">Admin Console</h1>
 
-<h4 class="family-font">Create - Add - Edit - Movie</h4>
 <hr />
-<div class="row family-font">
+<div class="row family-font accor-button glass-effect striped-background mb-5">
     <div class="col-md-4">
         <form asp-action="CreateMovie">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -46,7 +45,7 @@
 </div>
 
 <div class="family-font">
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="accor-button glass-effect striped-background red-border mt-3">Back to List</a>
 </div>
 
 @section Scripts {

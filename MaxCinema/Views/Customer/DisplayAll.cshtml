@@ -6,7 +6,7 @@
 
 <h1 class="family-font  border rounded-2 d-block accor-button glass-effect striped-background">Admin Console</h1>
 <body class="family-font">
-    <h4>Create - Add - Edit - Customer</h4>
+
     <div>
         <p>
             <a asp-action="CreateCustomer" class="btn btn-danger btn-sm box-shadow">Create New</a>
@@ -22,8 +22,8 @@
     <div class="row mt-5 family-font">
         @foreach (var item in Model)
         {
-            <div class="col-md-6 mb-4 glass-effect box-shadow red-border">
-                <div class="card text-white bg-danger">
+            <div class="col-md-6 mb-4 glass-effect box-shadow striped-background accor-button red-border">
+                <div class="card text-white accor-button glass-effect striped-background">
                     <div class="card-body">
                         <h5 class="card-title" title="@item.Firstname @item.Lastname">@item.Firstname @item.Lastname</h5> 
                         <p class="card-text"><strong>@item.EmailAddress | @item.Phone | @item.BillingAddress | @item.BillingZip | @item.BillingCity | @item.DeliveryAddress | @item.DeliveryZip</strong></p>
@@ -43,16 +43,16 @@
                     </div>
                     <div class="card-body d-flex justify-content-between">
 
-                        <button type="button" class="btn btn-success btn-md">View Profile</button>
+                        <button type="button" class="btn btn-success btn-md box-shadow">View Profile</button>
 
 
-                        <button type="button" class="btn btn-primary btn-md">Edit</button>
+                        <button type="button" class="btn btn-primary btn-sm box-shadow">Edit</button>
 
 
-                        <button type="button" class="btn btn-info btn-md">Details</button>
+                        <button type="button" class="btn btn-info btn-sm box-shadow">Details</button>
 
 
-                        <button type="button" class="btn btn-danger btn-md">Delete</button>
+                        <button type="button" class="btn btn-danger btn-md box-shadow">Delete</button>
                         
                     </div>
                 </div>
