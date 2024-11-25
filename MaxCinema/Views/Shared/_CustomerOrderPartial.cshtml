@@ -1,6 +1,6 @@
-﻿@model MaxCinema.Models.VM.CustomerOrderVM
+@model MaxCinema.Models.VM.CustomerOrderVM
 
-<div class="container-fluid border rounded mb-3 p-3 shadow-sm family-font">
+<div class="container-fluid border rounded mb-3 p-3 shadow-sm family-font accor-button glass-effect striped-background">
     <div class="row">
         <span class=" col-md-6"><strong>Order date: @Model.OrderDate</strong></span>
         <span class=" col-md-6"><strong>Customer Name: @Model.CustomerName</strong></span>
@@ -9,46 +9,59 @@
         int count = 0;
         decimal sum = 0;
     }
-    <div class="row">
-        <div class="col-md-12">
-            <table class="table table-secondary table-striped">
-                <thead>
-                    <tr>
-                        <th class="col-md-6">
-                            Movie
-                        </th>
-                        <th class="col-md-3">
-                            Unit Price
-                        </th>
-                        <th class="col-md-3">
-                            Quantity
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model.ListMovie)
-                    {
-                        <tr>
-                            <td class="col-md-6">
-                                @item.Title
-                            </td>
-                            <td class="col-md-3">
-                                @item.Price
-                            </td>
-                            <td class="col-md-3">
-                                @item.Quantity
-                            </td>
-                        </tr>
-                        sum += item.Price * item.Quantity;
-                        count += item.Quantity;
-                    }
-                </tbody>
-            </table>
+
+
+    <div class="accordion" id="orderAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button accor-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Order Details
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#orderAccordion">
+                <div class="accordion-body">
+
+                    <table class="table table-secondary table-striped">
+                        <thead>
+                            <tr>
+                                <th class="col-md-6">
+                                    Movie
+                                </th>
+                                <th class="col-md-3">
+                                    Unit Price
+                                </th>
+                                <th class="col-md-3">
+                                    Quantity
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ListMovie)
+                            {
+                                <tr>
+                                    <td class="col-md-6">
+                                        @item.Title
+                                    </td>
+                                    <td class="col-md-3">
+                                        @item.Price
+                                    </td>
+                                    <td class="col-md-3">
+                                        @item.Quantity
+                                    </td>
+                                </tr>
+                                sum += item.Price * item.Quantity;
+                                count += item.Quantity;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
+</div>
     <div class="row family-font">
         <div class="col-md-6"><span><strong>Total Amount: @count </strong></span></div>
         <div class="col-md-6"><span><strong>Total Cost: @sum SEK</strong></span></div>
     </div>
-</div>
+
 

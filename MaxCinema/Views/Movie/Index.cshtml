@@ -4,17 +4,17 @@
     ViewData["Title"] = "Index";
 }
 
-<h1 class="family-font">Cinema Library</h1>
+<h1 class="family-font border rounded-2 d-block accor-button glass-effect striped-background">Cinema Library</h1>
 
 <p class="family-font">
-    <a asp-action="CreateMovie" class=>Create New</a>
+    <a asp-action="CreateMovie" class="btn btn-danger btn-sm box-shadow">Create New</a>
 </p>
 
 
-    <div class="row mt-5 family-font">
+<div class="row mt-5 family-font accor-button glass-effect striped-background">
         @foreach (var item in Model)
         {
-            <div class="col-md-6 mb-4">
+        <div class="col-md-6 mb-4">
                 <partial name="_DisplayMoviePartial" model="@item" />
             </div>
         }

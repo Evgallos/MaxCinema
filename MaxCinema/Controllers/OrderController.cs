@@ -22,7 +22,7 @@ namespace MaxCinema.Controllers
         }
         public IActionResult Index()
         {
-            List<Order> orderList = _orderService.GetOrderListFor(0);
+            var orderList = _orderService.GetOrderListAll();
             return View(orderList);
         }
 
@@ -71,40 +71,12 @@ namespace MaxCinema.Controllers
 
         public IActionResult CustomerOrderDisplay(string email)
         {
-            var orders = _orderService.GetOrdersByEmail(email); //include orderRow and customer
+            var orders = _orderService.GetOrdersByEmail(email); 
             int orderCount = orders.Count();
             ViewBag.OrderCount = orderCount;
-            ViewBag.Name = orders.FirstOrDefault().Customer.Firstname + " " + orders.FirstOrDefault().Customer.Lastname;
+            ViewBag.Name = orders.FirstOrDefault().CustomerName;
 
-            var result = orders.Select(x => new CustomerOrderVM()
-            {
-                OrderId = x.Id,
-                CustomerId = x.Customer.Id,
-                CustomerName = x.Customer.Firstname + " " + x.Customer.Lastname,
-                OrderDate = x.OrderDate,
-
-                ListMovie = x.ListOrderRow
-                .GroupBy(x => x.MovieId)
-                .OrderBy(g => g.Key)
-                .Select(g => new
-                {
-                    Quantity = g.Count(),
-                    MovieId = g.Key,
-                    Price = g.Select(x => x.Price).FirstOrDefault()
-                })
-                .Join(_movieService.GetListAll(),
-                qmp => qmp.MovieId,
-                movie => movie.Id,
-                (qmp, movie) => new MovieInOrderVM()
-                {
-                    MovieId = movie.Id,
-                    Title = movie.Title,
-                    Quantity = qmp.Quantity,
-                    Price = qmp.Price
-                }).ToList()
-            }).ToList();
-
-            return View(result);
+            return View(orders);
         }
 
     }

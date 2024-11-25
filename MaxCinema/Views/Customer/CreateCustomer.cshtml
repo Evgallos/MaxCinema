@@ -4,65 +4,65 @@
     ViewData["Title"] = "Register as customer";
 }
 
-<h1 class="family-font">Register as customer</h1>
+<h1 class="family-font accor-button glass-effect striped-background red-border">Register as customer</h1>
 
 <h3 class="family-font">@TempData["EmailCheck"]</h3>
 <hr />
-<div class="row family-font">
+<div class="row family-font border rounded-2 d-block accor-button glass-effect striped-background">
     <div class="col-md-6 glass-effect red-border mx-auto">
         <form asp-action="CreateCustomer">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div class="form-group text-white">
                 <label asp-for="Firstname" class="control-label"></label>
                 <input asp-for="Firstname" class="form-control" />
                 <span asp-validation-for="Firstname" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group text-white">
                 <label asp-for="Lastname" class="control-label"></label>
                 <input asp-for="Lastname" class="form-control" />
                 <span asp-validation-for="Lastname" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group text-white">
                 <label asp-for="BillingAddress" class="control-label"></label>
                 <input asp-for="BillingAddress" class="form-control" />
                 <span asp-validation-for="BillingAddress" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group text-white">
                 <label asp-for="BillingZip" class="control-label"></label>
                 <input asp-for="BillingZip" class="form-control" />
                 <span asp-validation-for="BillingZip" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group text-white">
                 <label asp-for="BillingCity" class="control-label"></label>
                 <input asp-for="BillingCity" class="form-control" />
                 <span asp-validation-for="BillingCity" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group text-white">
                 <label asp-for="DeliveryAddress" class="control-label"></label>
                 <input asp-for="DeliveryAddress" class="form-control" />
                 <span asp-validation-for="DeliveryAddress" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group text-white">
                 <label asp-for="DeliveryZip" class="control-label"></label>
                 <input asp-for="DeliveryZip" class="form-control" />
                 <span asp-validation-for="DeliveryZip" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group text-white">
                 <label asp-for="DeliveryCity" class="control-label"></label>
                 <input asp-for="DeliveryCity" class="form-control" />
                 <span asp-validation-for="DeliveryCity" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group text-white">
                 <label asp-for="EmailAddress" class="control-label"></label>
                 <input asp-for="EmailAddress" class="form-control" />
                 <span asp-validation-for="EmailAddress" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group text-white">
                 <label asp-for="Phone" class="control-label"></label>
                 <input asp-for="Phone" class="form-control" />
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group text-white">
                 <input type="submit" value="Create" class="btn btn-primary btn-md-3 box-shadow m-3" />
             </div>
 
