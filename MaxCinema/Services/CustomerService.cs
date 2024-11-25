@@ -38,5 +38,16 @@ namespace MaxCinema.Services
 
             return bigOrder.Customer;
         }
+
+        public Customer GetById(int id)
+        {
+            return _db.Customers.SingleOrDefault(c => c.Id==id);
+        }
+
+        public void Edit(Customer customer)
+        {
+            _db.Customers.Update(customer);
+            _db.SaveChanges();
+        }
     }
 }
