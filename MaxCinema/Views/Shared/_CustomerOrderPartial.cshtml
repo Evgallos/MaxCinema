@@ -15,7 +15,11 @@
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button accor-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Order Details
+                    <span>Order Details |&nbsp</span>
+                    <span>Order ID: @Model.OrderId |&nbsp</span>
+                    <span id=@($"{Model.OrderId}totalAmount1")></span><span> &nbsp|&nbsp</span>
+                    <span id=@($"{Model.OrderId}totalCost1")></span>
+                   
                 </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#orderAccordion">
@@ -54,14 +58,25 @@
                             }
                         </tbody>
                     </table>
+                    <div class="row family-font">
+                        <div class="col-md-6"><span id=@($"{Model.OrderId}totalAmount2")><strong>Total Amount: @count </strong></span></div>
+                        <div class="col-md-6"><span id=@($"{Model.OrderId}totalCost2")><strong>Total Cost: @sum SEK</strong></span></div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
-    <div class="row family-font">
-        <div class="col-md-6"><span><strong>Total Amount: @count </strong></span></div>
-        <div class="col-md-6"><span><strong>Total Cost: @sum SEK</strong></span></div>
-    </div>
-
+    
+<script>
+    $(document).ready(function () {
+        $('#' + @Model.OrderId +'totalAmount1').text(
+            $('#' + @Model.OrderId +'totalAmount2').text()
+        );
+        $('#' + @Model.OrderId +'totalCost1').text(
+            $('#' + @Model.OrderId +'totalCost2').text()
+        );
+    });
+</script>
 

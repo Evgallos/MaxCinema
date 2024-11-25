@@ -38,9 +38,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="DisplayAll">Customer</a>
                         </li>
-                        <li class="nav-item">
+                        @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Login">AdminLogin</a>
-                        </li>
+                        </li> *@
                     </ul>
                     <div class="flex-grow-1"></div>
                     <div class="navbar-nav d-flex">
@@ -48,7 +48,7 @@
                             <a asp-controller="Customer" asp-action="CustomerCheckIn" class="btn btn-primary me-2">Customer</a>
                         </div>
                         <div class="nav-item">
-                            <a asp-controller="Order" asp-action="Index" class="btn btn-primary me-2">Admin</a>
+                            <a asp-controller="Admin" asp-action="Login" class="btn btn-primary me-2">Admin</a>
                         </div>
                     </div>
                 </div>

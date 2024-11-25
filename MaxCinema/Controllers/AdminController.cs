@@ -17,10 +17,10 @@ namespace MaxCinema.Controllers
         }
         public IActionResult Index()
         {
-            if (HttpContext.Session.Get<string>("IsAdmin") != "true")
-            {
-                return RedirectToAction("Login");
-            }
+            //if (HttpContext.Session.Get<string>("IsAdmin") != "true")
+            //{
+            //    return RedirectToAction("Login");
+            //}
             return View();
         }
 
@@ -34,7 +34,7 @@ namespace MaxCinema.Controllers
             if (VerifyPassword(password, _passwordHash))
             {
                 HttpContext.Session.Set<string>("IsAdmin","true");
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Order");
             }
 
             ViewBag.Error = "Invalid password.";
