@@ -10,5 +10,8 @@ namespace MaxCinema.Services
         public Customer GetCustomerByEmail(string email);
 
         public Customer GetCustomerWithBiggestOrder();
+
+        public Customer GetById(int id);
+        void Edit(Customer customer);
     }
 }

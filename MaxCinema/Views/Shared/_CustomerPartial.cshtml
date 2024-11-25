@@ -9,7 +9,7 @@
             <p><strong>Email:</strong> @Model.EmailAddress</p>
             <p><strong>Phone:</strong> @Model.Phone</p>
             <div class="btn-group family-font" role="group">
-                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning btn-sm">Edit</a>
+                <a asp-action="GetById" asp-route-id="@Model.Id" class="btn btn-warning btn-sm">Edit</a>
                 <a asp-action="Details" asp-route-id="@Model.Id" class="btn btn-info btn-sm">Details</a>
                 <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger btn-sm">Delete</a>
             </div>

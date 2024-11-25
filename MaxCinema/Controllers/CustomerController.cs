@@ -67,7 +67,18 @@ namespace MaxCinema.Controllers
             }
         }
 
+        
+        public IActionResult Edit(int id)
+        {
+            var customer = _customerService.GetById(id);
+            return View(customer);
+        }
+        [HttpPost]
+        public IActionResult Edit(Customer customer)
+        {
+            _customerService.Edit(customer);
+            return RedirectToAction("DisplayAll");
+        }
 
-  
     }
 }
