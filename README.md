@@ -8,4 +8,4 @@ Technologies Used:<br/>
 Back-End: C#, Ajax, LinQ<br/>
 Front-End: HTML, CSS, Bootstrap, JavaScript (jQuery)<br/>
 
-If you are experiencing issues with Javascript in your browser and would like to view the presentation, please copy the following link:<br/> https://1drv.ms/p/c/66f1ad52fc8c2bf9/EZVz7VgTFAFKnCJq3Yb5u48BEeCtEXmmFFLvdn7oO73JPw?e=OnWeNq
+🚀 Presentation Project MaxCinema - https://1drv.ms/p/c/66f1ad52fc8c2bf9/Ee9_d7p_CutFja_6ojT_w1gBCoSAl0-rsDzaqI5AQvcoWA?e=ul4zJO
