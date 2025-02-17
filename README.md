@@ -60,6 +60,8 @@ All source code and assets of **MaxCinema** are copyrighted.
 
 ---
 
+The following **YAML** code includes a **JavaScript** script that I implemented and customized for the **MaxCinema** project. This script adds a "Scroll to Top" button to the website, using **jQuery** to detect when the user scrolls down. Once the user scrolls past a certain point, the button appears, allowing smooth scrolling back to the top when clicked. The original idea was sourced from open resources, but I modified and integrated it specifically for this project.
+
 ### **📝 YAML Configuration (Code Snippet)**  
 ```yaml
 code_snippets:
@@ -110,5 +112,6 @@ code_snippets:
       }
 ```  
 ---
+
 ### ✅ **Final Notes:**  
 MaxCinema was a successful project that showcased my skills in **front-end & back-end development, UI/UX design, and responsive web design**. Working on this project significantly enhanced my expertise in **C#, MVC, LINQ, JavaScript, and Bootstrap**.
